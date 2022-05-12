@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.estockmarket.company.entities.Company;
+import com.estockmarket.company.repository.CompanyMongoDbRepository;
 import com.estockmarket.company.repository.CompanyRepository;
 import com.estockmarket.company.service.CompanyServices;
 
@@ -28,6 +29,9 @@ public class CompanyApiController {
 
 	@Autowired
 	private CompanyRepository companyRepository;
+
+	@Autowired
+	private CompanyMongoDbRepository companyMongoDbRepository;
 
 	private String CRUD_C = "C";
 	private String CRUD_U = "U";
@@ -59,13 +63,20 @@ public class CompanyApiController {
 	}
 
 	@GetMapping("/info/{companycode}")
-	public Company getCompanyInfo(@PathVariable String companycode) {
-		return companyServices.getCompanyByCode(companycode);
+	public com.estockmarket.company.mongoDbEntities.Company getCompanyInfo(@PathVariable String companycode) {
+		// for this Read operation we will use
+		// MongoDB instead of MySQL
+		com.estockmarket.company.mongoDbEntities.Company company = companyMongoDbRepository
+				.findByCompanyCode(companycode);
+		return company;
 	}
 
 	@GetMapping("/getall")
-	public List<Company> getAllCompanies() {
-		return companyRepository.findAll();
+	public List<com.estockmarket.company.mongoDbEntities.Company> getAllCompanies() {
+		// for this Read operation we will use
+		// MongoDB instead of MySQL
+		List<com.estockmarket.company.mongoDbEntities.Company> companyList = companyMongoDbRepository.findAll();
+		return companyList;
 	}
 
 	@DeleteMapping("/delete/{companycode}")
