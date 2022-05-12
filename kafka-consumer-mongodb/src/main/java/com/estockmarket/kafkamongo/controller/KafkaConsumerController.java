@@ -8,6 +8,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.estockmarket.kafkamongo.entities.Company;
+import com.estockmarket.kafkamongo.entities.Stocks;
 import com.estockmarket.kafkamongo.services.SpringbootMongoDbService;
 
 @RestController
@@ -23,6 +24,13 @@ public class KafkaConsumerController {
 	public Company getJsonMsgFromTopic(com.estockmarket.company.dto.MySqlMongoSyncTopic1Dto mySqlMongoSyncTopic1Dto) {
 		Company company = springbootMongoDbService.mongoDbCrudOps(mySqlMongoSyncTopic1Dto);
 		return company;
+	}
+
+	@KafkaListener(groupId = "#{'${kafka.topic.name}'}"
+			+ "-1", topics = "#{'${kafka.topic.name.stocks}'}", containerFactory = "consumerKafkaListenerContainerFactory")
+	public Stocks getJsonMsgFromTopicStocks(com.estockmarket.stock.dto.DbSyncTopicStocksDto dbSyncTopicStocksDto) {
+		Stocks stocks = springbootMongoDbService.mongoDbCrudOpsStocks(dbSyncTopicStocksDto);
+		return stocks;
 	}
 
 }
