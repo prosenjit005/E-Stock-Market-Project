@@ -8,4 +8,6 @@ public interface CompanyServices {
 
 	Boolean validateCompanyDetails(Company company);
 
+	void sendToKafka(Company company, String CRUD);
+
 }

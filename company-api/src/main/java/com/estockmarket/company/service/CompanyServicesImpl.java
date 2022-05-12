@@ -3,8 +3,11 @@ package com.estockmarket.company.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
+import com.estockmarket.company.dto.MySqlMongoSyncTopic1Dto;
 import com.estockmarket.company.entities.Company;
 import com.estockmarket.company.repository.CompanyRepository;
 
@@ -15,6 +18,12 @@ public class CompanyServicesImpl implements CompanyServices {
 
 	@Autowired
 	private CompanyRepository companyRepository;
+
+	@Autowired
+	private KafkaTemplate<String, Object> template;
+
+	@Autowired
+	private Environment env;
 
 	@Override
 	public Company getCompanyByCode(String companyCode) {
@@ -49,6 +58,14 @@ public class CompanyServicesImpl implements CompanyServices {
 		}
 
 		return validFlag;
+	}
+
+	@Override
+	public void sendToKafka(Company company, String CRUD) {
+		MySqlMongoSyncTopic1Dto mySqlMongoSyncTopic1Dto = new MySqlMongoSyncTopic1Dto();
+		mySqlMongoSyncTopic1Dto.setCompany(company);
+		mySqlMongoSyncTopic1Dto.setCrudOps(CRUD);
+		template.send(env.getProperty("kafka.topic.name"), mySqlMongoSyncTopic1Dto);
 	}
 
 }

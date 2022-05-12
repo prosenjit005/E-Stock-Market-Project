@@ -29,20 +29,33 @@ public class CompanyApiController {
 	@Autowired
 	private CompanyRepository companyRepository;
 
+	private String CRUD_C = "C";
+	private String CRUD_U = "U";
+	private String CRUD_D = "D";
+
 	@GetMapping("/test")
 	public String test() {
 		return "CompanyApiController endpoint hit success !!!";
 	}
 
 	@PostMapping("/register")
-	public String registerCompany(@RequestBody Company company) {
+	public Company registerCompany(@RequestBody Company company) {
+		Company companyReturn = null;
 
+		// creating the company in the MySQL DB
 		if (companyServices.validateCompanyDetails(company)) {
-			companyRepository.save(company);
-			return "Company Data added successfully with ID=" + company.getId();
+			companyReturn = companyRepository.save(company);
+			logger.info("Company Data added successfully with ID=" + company.getId());
 		} else {
-			return "There is an issue.";
+			logger.info("There is an issue while saving the Company.");
 		}
+
+		// publishing in the topic so that MongoDB can also be in sync
+		if (null != companyReturn) {
+			companyServices.sendToKafka(companyReturn, CRUD_C);
+		}
+
+		return companyReturn;
 	}
 
 	@GetMapping("/info/{companycode}")

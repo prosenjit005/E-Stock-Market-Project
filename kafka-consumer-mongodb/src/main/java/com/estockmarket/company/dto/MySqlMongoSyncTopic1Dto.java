@@ -1,4 +1,4 @@
-package com.estockmarket.kafkamongo.dto;
+package com.estockmarket.company.dto;
 
 import com.estockmarket.kafkamongo.entities.Company;
 
