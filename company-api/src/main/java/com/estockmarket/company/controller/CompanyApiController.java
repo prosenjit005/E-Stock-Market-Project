@@ -78,6 +78,11 @@ public class CompanyApiController {
 		} else {
 			logger.info("Company not found for companycode={}", companycode);
 		}
+
+		// publishing in the topic so that MongoDB can also be in sync
+		if (null != company) {
+			companyServices.sendToKafka(company, CRUD_D);
+		}
 		return company;
 	}
 
