@@ -7,10 +7,10 @@ import org.springframework.core.env.Environment;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
+import com.estockmarket.stock.dto.Company;
 import com.estockmarket.stock.dto.DbSyncTopicStocksDto;
-import com.estockmarket.stock.entities.Company;
 import com.estockmarket.stock.entities.Stocks;
-import com.estockmarket.stock.repository.CompanyRepository;
+import com.estockmarket.stock.restClient.CompanyApiRestClient;
 
 @Service
 public class StocksServicesImpl implements StocksServices {
@@ -18,7 +18,7 @@ public class StocksServicesImpl implements StocksServices {
 	private static final Logger logger = LoggerFactory.getLogger(StocksServicesImpl.class);
 
 	@Autowired
-	CompanyRepository companyRepository;
+	CompanyApiRestClient companyApiRestClient;
 
 	@Autowired
 	private KafkaTemplate<String, Object> template;
@@ -36,7 +36,7 @@ public class StocksServicesImpl implements StocksServices {
 		}
 
 		// Check if the Company Code exists or not
-		Company company = companyRepository.findByCompanyCode(companycode);
+		Company company = companyApiRestClient.getCompanyInfo(companycode);
 		if (company == null) {
 			logger.info("The Company with code {} does not exists.", companycode);
 			return Boolean.FALSE;

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.estockmarket.stock.entities.Stocks;
 import com.estockmarket.stock.repository.StocksRepository;
+import com.estockmarket.stock.restClient.CompanyApiRestClient;
 import com.estockmarket.stock.service.StocksServices;
 
 @RestController
@@ -27,7 +28,10 @@ public class StocksApiController {
 
 	@Autowired
 	StocksRepository stocksRepository;
-	
+
+	@Autowired
+	CompanyApiRestClient companyApiRestClient;
+
 	private String CRUD_C = "C";
 	private String CRUD_U = "U";
 	private String CRUD_D = "D";
@@ -37,6 +41,11 @@ public class StocksApiController {
 		return "StocksApiController endpoint hit success !!!";
 	}
 
+	@GetMapping("/testCompanyApi")
+	public String testCompanyApi() {
+		return companyApiRestClient.test() + " from StocksApiController !!";
+	}
+
 	@PostMapping("/add/{companycode}")
 	public String addNewStock(@RequestBody Stocks stocks, @PathVariable String companycode) {
 		logger.info("stocks={} \n companycode={}", stocks, companycode);
@@ -44,12 +53,12 @@ public class StocksApiController {
 			stocks.setCompanyCode(companycode);
 			stocks.setStockDateTime(new Date());
 			stocksRepository.save(stocks);
-			
+
 			// publishing in the topic so that MongoDB can also be in sync
 			if (null != stocks) {
 				stocksServices.sendToKafka(stocks, CRUD_C);
 			}
-			
+
 			return "Stocks Data added successfully with ID=" + stocks.getId();
 		} else {
 			return "There is an issue.";
