@@ -15,4 +15,5 @@ public class DbSyncTopicStocksDto {
 
 	private Stocks stocks;
 	private String crudOps;
+
 }

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.estockmarket.company.entities.Company;
 import com.estockmarket.company.repository.CompanyMongoDbRepository;
 import com.estockmarket.company.repository.CompanyRepository;
+import com.estockmarket.company.restClient.StocksApiRestClient;
 import com.estockmarket.company.service.CompanyServices;
 
 @RestController
@@ -32,6 +33,9 @@ public class CompanyApiController {
 
 	@Autowired
 	private CompanyMongoDbRepository companyMongoDbRepository;
+	
+	@Autowired
+	private StocksApiRestClient stocksApiRestClient;
 
 	private String CRUD_C = "C";
 	private String CRUD_U = "U";
@@ -40,6 +44,11 @@ public class CompanyApiController {
 	@GetMapping("/test")
 	public String test() {
 		return "CompanyApiController endpoint hit success !!!";
+	}
+	
+	@GetMapping("/testStocksApi")
+	public String testCompanyApi() {
+		return stocksApiRestClient.test() + " from CompanyApiController !!";
 	}
 
 	@PostMapping("/register")
@@ -84,6 +93,9 @@ public class CompanyApiController {
 		logger.info("deleteCompany with companycode={}", companycode);
 		Company company = companyServices.getCompanyByCode(companycode);
 		if (null != company) {
+			logger.info("Deleting company stocks with id={}", company.getId());
+			stocksApiRestClient.deleteCompanyStocks(companycode);
+			
 			logger.info("Deleting company with id={}", company.getId());
 			companyRepository.deleteById(company.getId());
 		} else {

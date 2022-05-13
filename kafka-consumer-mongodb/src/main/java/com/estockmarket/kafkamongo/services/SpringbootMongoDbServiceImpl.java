@@ -1,6 +1,9 @@
 package com.estockmarket.kafkamongo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import com.estockmarket.company.dto.MySqlMongoSyncTopic1Dto;
@@ -18,6 +21,9 @@ public class SpringbootMongoDbServiceImpl implements SpringbootMongoDbService {
 
 	@Autowired
 	private StocksRepository stocksRepository;
+
+	@Autowired
+	private MongoOperations mongoOperations;
 
 	@Override
 	public Company mongoDbCrudOps(MySqlMongoSyncTopic1Dto mySqlMongoSyncTopic1Dto) {
@@ -63,7 +69,7 @@ public class SpringbootMongoDbServiceImpl implements SpringbootMongoDbService {
 			} else if (crudOps.equalsIgnoreCase("U")) {
 				stocks = mongoUpdateOps(stocks);
 			} else if (crudOps.equalsIgnoreCase("D")) {
-				stocks = mongoDeleteOps(stocks);
+				stocks = mongoDeleteAllOps(stocks);
 			}
 		}
 
@@ -80,8 +86,10 @@ public class SpringbootMongoDbServiceImpl implements SpringbootMongoDbService {
 		return stocks;
 	}
 
-	public Stocks mongoDeleteOps(Stocks stocks) {
-		stocksRepository.deleteById(stocks.getId());
+	public Stocks mongoDeleteAllOps(Stocks stocks) {
+		Query query = new Query();
+		query.addCriteria(Criteria.where("companyCode").gte(stocks.getCompanyCode()));
+		mongoOperations.findAllAndRemove(query, Stocks.class);
 		return stocks;
 	}
 }

@@ -1,10 +1,12 @@
 package com.estockmarket.stock.controller;
 
 import java.util.Date;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -64,6 +66,19 @@ public class StocksApiController {
 			return "There is an issue.";
 		}
 
+	}
+
+	@DeleteMapping("/delete/{companycode}")
+	public void deleteCompanyStocks(@PathVariable String companycode) {
+		List<Stocks> stocksList = stocksRepository.findByCompanyCode(companycode);
+		
+		// this will delete all stocks with the given company code. (from MySQL DB)
+		stocksRepository.deleteAllByCompanyCode(companycode);
+
+		// publishing in the topic so that MongoDB can also be in sync
+		if (null != stocksList && stocksList.size() > 0) {
+			stocksServices.sendToKafka(stocksList.get(0), CRUD_D);
+		}
 	}
 
 }
