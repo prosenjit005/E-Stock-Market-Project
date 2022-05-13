@@ -1,11 +1,13 @@
 package com.estockmarket.stock.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -71,7 +73,7 @@ public class StocksApiController {
 	@DeleteMapping("/delete/{companycode}")
 	public void deleteCompanyStocks(@PathVariable String companycode) {
 		List<Stocks> stocksList = stocksRepository.findByCompanyCode(companycode);
-		
+
 		// this will delete all stocks with the given company code. (from MySQL DB)
 		stocksRepository.deleteAllByCompanyCode(companycode);
 
@@ -79,6 +81,15 @@ public class StocksApiController {
 		if (null != stocksList && stocksList.size() > 0) {
 			stocksServices.sendToKafka(stocksList.get(0), CRUD_D);
 		}
+	}
+
+	@GetMapping("/get/{companycode}/{startdate}/{enddate}")
+	public List<com.estockmarket.stock.mongoDbEntities.Stocks> getStocks(@PathVariable String companycode,
+			@PathVariable("startdate") @DateTimeFormat(pattern = "dd-MM-yyyy") Date startdate,
+			@PathVariable("enddate") @DateTimeFormat(pattern = "dd-MM-yyyy") Date enddate) {
+		List<com.estockmarket.stock.mongoDbEntities.Stocks> stocksList = new ArrayList<>();
+		stocksList = stocksServices.getStocksList(companycode, startdate, enddate);
+		return stocksList;
 	}
 
 }

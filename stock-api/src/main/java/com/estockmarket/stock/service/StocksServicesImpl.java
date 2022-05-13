@@ -1,5 +1,9 @@
 package com.estockmarket.stock.service;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +14,7 @@ import org.springframework.stereotype.Service;
 import com.estockmarket.stock.dto.Company;
 import com.estockmarket.stock.dto.DbSyncTopicStocksDto;
 import com.estockmarket.stock.entities.Stocks;
+import com.estockmarket.stock.repository.StocksMongoDbRepository;
 import com.estockmarket.stock.restClient.CompanyApiRestClient;
 
 @Service
@@ -25,6 +30,9 @@ public class StocksServicesImpl implements StocksServices {
 
 	@Autowired
 	private Environment env;
+
+	@Autowired
+	StocksMongoDbRepository stocksMongoDbRepository;
 
 	@Override
 	public Boolean validateStocksDetails(Stocks stocks, String companycode) {
@@ -51,6 +59,14 @@ public class StocksServicesImpl implements StocksServices {
 		mySqlMongoSyncTopic2Dto.setStocks(stocks);
 		mySqlMongoSyncTopic2Dto.setCrudOps(cRUD);
 		template.send(env.getProperty("kafka.topic.name"), mySqlMongoSyncTopic2Dto);
+	}
+
+	@Override
+	public List<com.estockmarket.stock.mongoDbEntities.Stocks> getStocksList(String companycode, Date startdate,
+			Date enddate) {
+		List<com.estockmarket.stock.mongoDbEntities.Stocks> stocksList = new ArrayList<>();
+		stocksList = stocksMongoDbRepository.getAllStocks(companycode, startdate, enddate);
+		return stocksList;
 	}
 
 }

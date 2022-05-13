@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "9eccbbcb-5912-4ff7-83f2-0b3006d29e9c",
+		"name": "company-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "test - company/test",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8989/api/v1.0/market/company/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"api",
+						"v1.0",
+						"market",
+						"company",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registerCompany",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"companyCode\":\"C001\",\r\n    \"companyName\":\"Company Name 1\",\r\n    \"companyCEO\":\"Gaurav CEO1\",\r\n    \"companyTurnover\":25.56,\r\n    \"companyWebsite\":\"www.company1.com\",\r\n    \"stockExchange\":\"NSE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8989/api/v1.0/market/company/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"api",
+						"v1.0",
+						"market",
+						"company",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCompanyInfo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8989/api/v1.0/market/company/info/C002",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"api",
+						"v1.0",
+						"market",
+						"company",
+						"info",
+						"C002"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllCompanies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8989/api/v1.0/market/company/getall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"api",
+						"v1.0",
+						"market",
+						"company",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCompany",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8989/api/v1.0/market/company/delete/C001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"api",
+						"v1.0",
+						"market",
+						"company",
+						"delete",
+						"C001"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
