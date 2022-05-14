@@ -1,5 +1,7 @@
 package com.estockmarket.kafkamongo.services;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -16,6 +18,8 @@ import com.estockmarket.stock.dto.DbSyncTopicStocksDto;
 @Service
 public class SpringbootMongoDbServiceImpl implements SpringbootMongoDbService {
 
+	private static final Logger logger = LoggerFactory.getLogger(SpringbootMongoDbServiceImpl.class);
+
 	@Autowired
 	private CompanyRepository companyRepository;
 
@@ -27,6 +31,7 @@ public class SpringbootMongoDbServiceImpl implements SpringbootMongoDbService {
 
 	@Override
 	public Company mongoDbCrudOps(MySqlMongoSyncTopic1Dto mySqlMongoSyncTopic1Dto) {
+		logger.info("mongoDbCrudOps input data: MySqlMongoSyncTopic1Dto={}", mySqlMongoSyncTopic1Dto);
 		Company company = mySqlMongoSyncTopic1Dto.getCompany();
 		String crudOps = mySqlMongoSyncTopic1Dto.getCrudOps();
 
@@ -44,22 +49,26 @@ public class SpringbootMongoDbServiceImpl implements SpringbootMongoDbService {
 	}
 
 	public Company mongoCreateOps(Company company) {
+		logger.info("mongoCreateOps: Company={}", company);
 		companyRepository.save(company);
 		return company;
 	}
 
 	public Company mongoUpdateOps(Company company) {
+		logger.info("mongoUpdateOps: Company={}", company);
 		companyRepository.save(company);
 		return company;
 	}
 
 	public Company mongoDeleteOps(Company company) {
+		logger.info("mongoDeleteOps: Company={}", company);
 		companyRepository.deleteById(company.getId());
 		return company;
 	}
 
 	@Override
 	public Stocks mongoDbCrudOpsStocks(DbSyncTopicStocksDto dbSyncTopicStocksDto) {
+		logger.info("mongoDbCrudOpsStocks input data: DbSyncTopicStocksDto={}", dbSyncTopicStocksDto);
 		Stocks stocks = dbSyncTopicStocksDto.getStocks();
 		String crudOps = dbSyncTopicStocksDto.getCrudOps();
 
@@ -77,16 +86,19 @@ public class SpringbootMongoDbServiceImpl implements SpringbootMongoDbService {
 	}
 
 	public Stocks mongoCreateOps(Stocks stocks) {
+		logger.info("mongoCreateOps: Stocks={}", stocks);
 		stocksRepository.save(stocks);
 		return stocks;
 	}
 
 	public Stocks mongoUpdateOps(Stocks stocks) {
+		logger.info("mongoUpdateOps: Stocks={}", stocks);
 		stocksRepository.save(stocks);
 		return stocks;
 	}
 
 	public Stocks mongoDeleteAllOps(Stocks stocks) {
+		logger.info("mongoDeleteAllOps: Stocks={}", stocks);
 		Query query = new Query();
 		query.addCriteria(Criteria.where("companyCode").gte(stocks.getCompanyCode()));
 		mongoOperations.findAllAndRemove(query, Stocks.class);

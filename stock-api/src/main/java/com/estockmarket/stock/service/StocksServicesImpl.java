@@ -36,10 +36,12 @@ public class StocksServicesImpl implements StocksServices {
 
 	@Override
 	public Boolean validateStocksDetails(Stocks stocks, String companycode) {
+		logger.info("validateStocksDetails: stocks={}, companycode={}", stocks, companycode);
 		Boolean validFlag = Boolean.TRUE;
 
 		// All details fields are be mandatory
 		if (stocks == null || stocks.getStockPrice() == null || companycode == null) {
+			logger.info("validateStocksDetails: mandatory details are missing.");
 			return Boolean.FALSE;
 		}
 
@@ -55,17 +57,21 @@ public class StocksServicesImpl implements StocksServices {
 
 	@Override
 	public void sendToKafka(Stocks stocks, String cRUD) {
+		logger.info("sendToKafka: stocks={}, cRUD={}", stocks, cRUD);
 		DbSyncTopicStocksDto mySqlMongoSyncTopic2Dto = new DbSyncTopicStocksDto();
 		mySqlMongoSyncTopic2Dto.setStocks(stocks);
 		mySqlMongoSyncTopic2Dto.setCrudOps(cRUD);
+		logger.info("sendToKafka: DbSyncTopicStocksDto={}", mySqlMongoSyncTopic2Dto);
 		template.send(env.getProperty("kafka.topic.name"), mySqlMongoSyncTopic2Dto);
 	}
 
 	@Override
 	public List<com.estockmarket.stock.mongoDbEntities.Stocks> getStocksList(String companycode, Date startdate,
 			Date enddate) {
+		logger.info("getStocksList: companycode={}, startdate={}, enddate={}", companycode, startdate, enddate);
 		List<com.estockmarket.stock.mongoDbEntities.Stocks> stocksList = new ArrayList<>();
 		stocksList = stocksMongoDbRepository.getAllStocks(companycode, startdate, enddate);
+		logger.info("getStocksList: stocksList={}", stocksList.toString());
 		return stocksList;
 	}
 

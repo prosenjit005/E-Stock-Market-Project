@@ -33,7 +33,7 @@ public class CompanyApiController {
 
 	@Autowired
 	private CompanyMongoDbRepository companyMongoDbRepository;
-	
+
 	@Autowired
 	private StocksApiRestClient stocksApiRestClient;
 
@@ -43,20 +43,24 @@ public class CompanyApiController {
 
 	@GetMapping("/test")
 	public String test() {
+		logger.info("CompanyApiController endpoint hit success !!!");
 		return "CompanyApiController endpoint hit success !!!";
 	}
-	
+
 	@GetMapping("/testStocksApi")
 	public String testCompanyApi() {
+		logger.info("stocksApiRestClient.test() from CompanyApiController endpoint hit success !!!");
 		return stocksApiRestClient.test() + " from CompanyApiController !!";
 	}
 
 	@PostMapping("/register")
 	public Company registerCompany(@RequestBody Company company) {
+		logger.info("registerCompany endpoint hit with input:company={}", company);
 		Company companyReturn = null;
 
 		// creating the company in the MySQL DB
 		if (companyServices.validateCompanyDetails(company)) {
+			logger.info("registerCompany endpoint: company validation is a success!");
 			companyReturn = companyRepository.save(company);
 			logger.info("Company Data added successfully with ID=" + company.getId());
 		} else {
@@ -65,6 +69,7 @@ public class CompanyApiController {
 
 		// publishing in the topic so that MongoDB can also be in sync
 		if (null != companyReturn) {
+			logger.info("registerCompany endpoint: sending the company data to kafka: CRUD_C!");
 			companyServices.sendToKafka(companyReturn, CRUD_C);
 		}
 
@@ -73,18 +78,22 @@ public class CompanyApiController {
 
 	@GetMapping("/info/{companycode}")
 	public com.estockmarket.company.mongoDbEntities.Company getCompanyInfo(@PathVariable String companycode) {
+		logger.info("getCompanyInfo endpoint hit with input:companycode={}", companycode);
 		// for this Read operation we will use
 		// MongoDB instead of MySQL
 		com.estockmarket.company.mongoDbEntities.Company company = companyMongoDbRepository
 				.findByCompanyCode(companycode);
+		logger.info("getCompanyInfo Return company={}", company);
 		return company;
 	}
 
 	@GetMapping("/getall")
 	public List<com.estockmarket.company.mongoDbEntities.Company> getAllCompanies() {
+		logger.info("getAllCompanies endpoint hit !");
 		// for this Read operation we will use
 		// MongoDB instead of MySQL
 		List<com.estockmarket.company.mongoDbEntities.Company> companyList = companyMongoDbRepository.findAll();
+		logger.info("getAllCompanies Return companyList={}", companyList.toString());
 		return companyList;
 	}
 
@@ -93,10 +102,10 @@ public class CompanyApiController {
 		logger.info("deleteCompany with companycode={}", companycode);
 		Company company = companyServices.getCompanyByCode(companycode);
 		if (null != company) {
-			logger.info("Deleting company stocks with id={}", company.getId());
+			logger.info("deleteCompany: Deleting company stocks with id={}", company.getId());
 			stocksApiRestClient.deleteCompanyStocks(companycode);
-			
-			logger.info("Deleting company with id={}", company.getId());
+
+			logger.info("deleteCompany: Deleting company with id={}", company.getId());
 			companyRepository.deleteById(company.getId());
 		} else {
 			logger.info("Company not found for companycode={}", companycode);
@@ -104,6 +113,7 @@ public class CompanyApiController {
 
 		// publishing in the topic so that MongoDB can also be in sync
 		if (null != company) {
+			logger.info("deleteCompany endpoint: sending the company data to kafka: CRUD_D!");
 			companyServices.sendToKafka(company, CRUD_D);
 		}
 		return company;

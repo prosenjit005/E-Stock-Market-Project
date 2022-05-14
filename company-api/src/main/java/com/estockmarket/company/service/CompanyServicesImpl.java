@@ -28,21 +28,22 @@ public class CompanyServicesImpl implements CompanyServices {
 	@Override
 	public Company getCompanyByCode(String companyCode) {
 		Company company = null;
-		logger.info("companyCode={}", companyCode);
+		logger.info("getCompanyByCode: companyCode={}", companyCode);
 		company = companyRepository.findByCompanyCode(companyCode);
-		logger.info("company={}", null != company ? company.toString() : null);
+		logger.info("getCompanyByCode: company={}", null != company ? company.toString() : null);
 		return company;
 	}
 
 	@Override
 	public Boolean validateCompanyDetails(Company company) {
-		logger.info("company={}", company.toString());
+		logger.info("validateCompanyDetails: input company={}", company.toString());
 		Boolean validFlag = Boolean.TRUE;
 
 		// All details fields are be mandatory
 		if (company == null || company.getCompanyCode() == null || company.getCompanyName() == null
 				|| company.getCompanyCEO() == null || company.getCompanyTurnover() == null
 				|| company.getCompanyWebsite() == null || company.getStockExchange() == null) {
+			logger.info("validateCompanyDetails: mandatory details are missing");
 			return Boolean.FALSE;
 		}
 
@@ -54,6 +55,7 @@ public class CompanyServicesImpl implements CompanyServices {
 
 		// Company Turnover must be greater than 10Cr
 		if (validFlag && !(company.getCompanyTurnover() > 10)) {
+			logger.info("validateCompanyDetails: Company Turnover must be greater than 10Cr.");
 			return Boolean.FALSE;
 		}
 
@@ -62,10 +64,13 @@ public class CompanyServicesImpl implements CompanyServices {
 
 	@Override
 	public void sendToKafka(Company company, String CRUD) {
+		logger.info("sendToKafka: input company={}, CRUD={}", company, CRUD);
 		MySqlMongoSyncTopic1Dto mySqlMongoSyncTopic1Dto = new MySqlMongoSyncTopic1Dto();
 		mySqlMongoSyncTopic1Dto.setCompany(company);
 		mySqlMongoSyncTopic1Dto.setCrudOps(CRUD);
+		logger.info("sendToKafka: sending to Kafka mySqlMongoSyncTopic1Dto={}", mySqlMongoSyncTopic1Dto.toString());
 		template.send(env.getProperty("kafka.topic.name"), mySqlMongoSyncTopic1Dto);
+		logger.info("sendToKafka: success!");
 	}
 
 }
