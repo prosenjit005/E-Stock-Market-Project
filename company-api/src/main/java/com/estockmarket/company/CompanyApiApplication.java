@@ -6,11 +6,14 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
+
 @SpringBootApplication
 @EnableWebSecurity
-//@EnableSwagger2
 @EnableEurekaClient
 @EnableFeignClients
+@OpenAPIDefinition(info = @Info(title = "Company API", version = "1.0", description = "company api"))
 public class CompanyApiApplication {
 
 	public static void main(String[] args) {
