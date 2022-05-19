@@ -17,17 +17,4 @@ public class CompanyApiApplication {
 		SpringApplication.run(CompanyApiApplication.class, args);
 	}
 
-//	@Bean
-//	public Docket productApi() {
-//		return new Docket(DocumentationType.SWAGGER_2).select().paths(PathSelectors.any())
-//				.apis(RequestHandlerSelectors.basePackage("com.estockmarket.company.controller"))
-//				.apis(RequestHandlerSelectors.basePackage("org.springframework.boot.actuate")).build()
-//				.apiInfo(apiInfo());
-//	}
-//
-//	private ApiInfo apiInfo() {
-//		return new ApiInfoBuilder().title("Building RESTful APIs with Swagger2 in Spring Boot").description("test")
-//				.termsOfServiceUrl("https://www.estckmarketdemo.com/").version("1.0").build();
-//	}
-
 }

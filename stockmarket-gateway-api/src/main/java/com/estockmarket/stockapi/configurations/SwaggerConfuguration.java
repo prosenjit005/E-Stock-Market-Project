@@ -17,7 +17,7 @@ public class SwaggerConfuguration implements SwaggerResourcesProvider {
 
 	@Override
 	public List<SwaggerResource> get() {
-		List resources = new ArrayList<>();
+		List<SwaggerResource> resources = new ArrayList<>();
 		resources.add(swaggerResource("company-api", "/companyapi/v2/api-docs", "2.0"));
 		resources.add(swaggerResource("stock-api", "/stockapi/v2/api-docs", "2.0"));
 		return resources;

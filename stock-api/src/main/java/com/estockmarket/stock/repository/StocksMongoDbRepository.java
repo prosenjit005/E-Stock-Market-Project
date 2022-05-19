@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
-import com.estockmarket.stock.mongoDbEntities.Stocks;
+import com.estockmarket.stock.mongodbentities.Stocks;
 
 public interface StocksMongoDbRepository extends MongoRepository<Stocks, Integer> {
 

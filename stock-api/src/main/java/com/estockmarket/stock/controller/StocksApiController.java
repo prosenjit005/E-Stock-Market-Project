@@ -1,6 +1,5 @@
 package com.estockmarket.stock.controller;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -18,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.estockmarket.stock.entities.Stocks;
 import com.estockmarket.stock.repository.StocksRepository;
-import com.estockmarket.stock.restClient.CompanyApiRestClient;
+import com.estockmarket.stock.restclient.CompanyApiRestClient;
 import com.estockmarket.stock.service.StocksServices;
 
 @RestController
@@ -36,9 +35,8 @@ public class StocksApiController {
 	@Autowired
 	CompanyApiRestClient companyApiRestClient;
 
-	private String CRUD_C = "C";
-	private String CRUD_U = "U";
-	private String CRUD_D = "D";
+	private String crudC = "C";
+	private String crudD = "D";
 
 	@GetMapping("/test")
 	public String test() {
@@ -55,7 +53,7 @@ public class StocksApiController {
 	@PostMapping("/add/{companycode}")
 	public String addNewStock(@RequestBody Stocks stocks, @PathVariable String companycode) {
 		logger.info("addNewStock: stocks={} \n companycode={}", stocks, companycode);
-		if (stocksServices.validateStocksDetails(stocks, companycode)) {
+		if (Boolean.TRUE.equals(stocksServices.validateStocksDetails(stocks, companycode))) {
 			logger.info("addNewStock: stocks validation is successful");
 			stocks.setCompanyCode(companycode);
 			stocks.setStockDateTime(new Date());
@@ -64,7 +62,7 @@ public class StocksApiController {
 			// publishing in the topic so that MongoDB can also be in sync
 			if (null != stocks) {
 				logger.info("addNewStock: sending to kafka: CRUD_C: stocks={}", stocks);
-				stocksServices.sendToKafka(stocks, CRUD_C);
+				stocksServices.sendToKafka(stocks, crudC);
 			}
 
 			return "Stocks Data added successfully with ID=" + stocks.getId();
@@ -84,20 +82,20 @@ public class StocksApiController {
 		stocksRepository.deleteAllByCompanyCode(companycode);
 
 		// publishing in the topic so that MongoDB can also be in sync
-		if (null != stocksList && stocksList.size() > 0) {
+		if (null != stocksList && !stocksList.isEmpty()) {
 			logger.info("deleteCompanyStocks: sending to kafka: CRUD_D: stocksList.get(0)={}", stocksList.get(0));
-			stocksServices.sendToKafka(stocksList.get(0), CRUD_D);
+			stocksServices.sendToKafka(stocksList.get(0), crudD);
 		}
 	}
 
 	@GetMapping("/get/{companycode}/{startdate}/{enddate}")
-	public List<com.estockmarket.stock.mongoDbEntities.Stocks> getStocks(@PathVariable String companycode,
+	public List<com.estockmarket.stock.mongodbentities.Stocks> getStocks(@PathVariable String companycode,
 			@PathVariable("startdate") @DateTimeFormat(pattern = "dd-MM-yyyy") Date startdate,
 			@PathVariable("enddate") @DateTimeFormat(pattern = "dd-MM-yyyy") Date enddate) {
 		logger.info("getStocks: input companycode={}, startdate={}, enddate={}", companycode, startdate, enddate);
-		List<com.estockmarket.stock.mongoDbEntities.Stocks> stocksList = new ArrayList<>();
-		stocksList = stocksServices.getStocksList(companycode, startdate, enddate);
-		logger.info("getStocks: stocksList={}", stocksList.toString());
+		List<com.estockmarket.stock.mongodbentities.Stocks> stocksList = stocksServices.getStocksList(companycode,
+				startdate, enddate);
+		logger.info("getStocks: stocksList={}", stocksList);
 		return stocksList;
 	}
 

@@ -1,10 +1,6 @@
-package com.estockmarket.stock.mongoDbEntities;
+package com.estockmarket.company.mongodbentities;
 
-import java.util.Date;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
@@ -20,15 +16,17 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "stocks")
-public class Stocks {
+@Document(collection = "company")
+public class Company {
 
 	@Id
-	@GeneratedValue
 	private Integer id;
-
 	private String companyCode;
-	private Double stockPrice;
-	private Date stockDateTime;
+	private String companyName;
+
+	private String companyCEO;
+	private Double companyTurnover;
+	private String companyWebsite;
+	private String stockExchange;
 
 }

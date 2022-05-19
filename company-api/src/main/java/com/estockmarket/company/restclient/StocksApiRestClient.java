@@ -1,4 +1,4 @@
-package com.estockmarket.company.restClient;
+package com.estockmarket.company.restclient;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.DeleteMapping;

@@ -11,6 +11,6 @@ public interface StocksServices {
 
 	void sendToKafka(Stocks stocks, String cRUD);
 
-	List<com.estockmarket.stock.mongoDbEntities.Stocks> getStocksList(String companycode, Date startdate, Date enddate);
+	List<com.estockmarket.stock.mongodbentities.Stocks> getStocksList(String companycode, Date startdate, Date enddate);
 
 }

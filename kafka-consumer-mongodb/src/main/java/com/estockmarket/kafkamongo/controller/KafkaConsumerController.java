@@ -27,7 +27,7 @@ public class KafkaConsumerController {
 			+ "-1", topics = "#{'${kafka.topic.name}'}", containerFactory = "consumerKafkaListenerContainerFactory")
 	public Company getJsonMsgFromTopic(com.estockmarket.company.dto.MySqlMongoSyncTopic1Dto mySqlMongoSyncTopic1Dto) {
 		logger.info("Kafka Topic=dbSynTopicCompany received data: MySqlMongoSyncTopic1Dto={}",
-				mySqlMongoSyncTopic1Dto.toString());
+				mySqlMongoSyncTopic1Dto);
 		Company company = springbootMongoDbService.mongoDbCrudOps(mySqlMongoSyncTopic1Dto);
 		logger.info("Kafka Topic=dbSynTopicCompany Return data: company={}", company);
 		return company;
@@ -37,7 +37,7 @@ public class KafkaConsumerController {
 			+ "-1", topics = "#{'${kafka.topic.name.stocks}'}", containerFactory = "consumerKafkaListenerContainerFactory")
 	public Stocks getJsonMsgFromTopicStocks(com.estockmarket.stock.dto.DbSyncTopicStocksDto dbSyncTopicStocksDto) {
 		logger.info("Kafka Topic=dbSyncTopicStocks received data: DbSyncTopicStocksDto={}",
-				dbSyncTopicStocksDto.toString());
+				dbSyncTopicStocksDto);
 		Stocks stocks = springbootMongoDbService.mongoDbCrudOpsStocks(dbSyncTopicStocksDto);
 		logger.info("Kafka Topic=dbSyncTopicStocks Return data: stocks={}", stocks);
 		return stocks;

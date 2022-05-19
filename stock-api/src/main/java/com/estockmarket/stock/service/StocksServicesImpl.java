@@ -1,6 +1,5 @@
 package com.estockmarket.stock.service;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -15,7 +14,7 @@ import com.estockmarket.stock.dto.Company;
 import com.estockmarket.stock.dto.DbSyncTopicStocksDto;
 import com.estockmarket.stock.entities.Stocks;
 import com.estockmarket.stock.repository.StocksMongoDbRepository;
-import com.estockmarket.stock.restClient.CompanyApiRestClient;
+import com.estockmarket.stock.restclient.CompanyApiRestClient;
 
 @Service
 public class StocksServicesImpl implements StocksServices {
@@ -66,12 +65,12 @@ public class StocksServicesImpl implements StocksServices {
 	}
 
 	@Override
-	public List<com.estockmarket.stock.mongoDbEntities.Stocks> getStocksList(String companycode, Date startdate,
+	public List<com.estockmarket.stock.mongodbentities.Stocks> getStocksList(String companycode, Date startdate,
 			Date enddate) {
 		logger.info("getStocksList: companycode={}, startdate={}, enddate={}", companycode, startdate, enddate);
-		List<com.estockmarket.stock.mongoDbEntities.Stocks> stocksList = new ArrayList<>();
-		stocksList = stocksMongoDbRepository.getAllStocks(companycode, startdate, enddate);
-		logger.info("getStocksList: stocksList={}", stocksList.toString());
+		List<com.estockmarket.stock.mongodbentities.Stocks> stocksList = stocksMongoDbRepository
+				.getAllStocks(companycode, startdate, enddate);
+		logger.info("getStocksList: stocksList={}", stocksList);
 		return stocksList;
 	}
 
