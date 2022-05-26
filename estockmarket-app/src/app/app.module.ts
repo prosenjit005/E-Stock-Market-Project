@@ -8,8 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule, MatFormFieldModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
