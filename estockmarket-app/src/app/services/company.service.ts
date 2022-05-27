@@ -30,17 +30,12 @@ export class CompanyService {
 
   constructor(private http: HttpClient, private commonService: CommonService) { }
 
+  getAllCompanies(): Observable<Company[]> {
+    return this.http.get<Company[]>(this.commonService.httpBaseCompanyUri + this.getAllCompaniesUrl, this.httpOptions)
+  }
 
-  // getAllCompanies() {
-  //   return this.http.get<Company[]>(this.commonService.httpBaseCompanyUri + this.getAllCompaniesUrl, this.httpOptions);
-  // }
-
-
-
-getAllCompanies(): Observable<Company[]> {
-  return this.http.get<Company[]>(this.commonService.httpBaseCompanyUri + this.getAllCompaniesUrl, this.httpOptions)
-}
-
-
+  saveCompanyDetails(company: Company): Observable<Company> {
+    return this.http.post<Company>(this.commonService.httpBaseCompanyUri + this.getAllCompaniesUrl, company, this.httpOptions);
+  }
 
 }

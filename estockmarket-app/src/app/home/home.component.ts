@@ -15,6 +15,13 @@ export class HomeComponent implements OnInit {
 
   allCompaniesData: Company[] = [];
 
+  companyCode: string = "";
+  companyName: string = "";
+  companyCEO: string = "";
+  companyTurnover!: number;
+  companyWebsite: string = "";
+  stockExchange: string = "";
+
   constructor(public companyService:CompanyService) { }
 
   ngOnInit(): void {
@@ -63,6 +70,10 @@ export class HomeComponent implements OnInit {
     this.getCompanyShowFlag = false;
     this.getAllCompaniesShowFlag = false;
     this.addStocksShowFlag = true;
+  }
+
+  saveCompany() {
+    
   }
 
 }

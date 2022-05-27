@@ -97,3 +97,384 @@
 2022-05-27 10:37:14.061  INFO 24932 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2022-05-27 10:42:14.070  INFO 24932 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2022-05-27 10:47:14.086  INFO 24932 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 15:55:57.345  INFO 9636 --- [restartedMain] c.e.stock.StockApiApplication            : Starting StockApiApplication using Java 17.0.2 on DESKTOP-9SJV7N9 with PID 9636 (C:\Prosenjit\My_IT\STSworkspaces\workspace1\E-Stock-Market-Project\stock-api\target\classes started by PROSENJIT in C:\Prosenjit\My_IT\STSworkspaces\workspace1\E-Stock-Market-Project\stock-api)
+2022-05-27 15:55:57.346  INFO 9636 --- [restartedMain] c.e.stock.StockApiApplication            : No active profile set, falling back to 1 default profile: "default"
+2022-05-27 15:55:57.499  INFO 9636 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-27 15:55:57.500  INFO 9636 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-27 15:56:02.536  INFO 9636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-27 15:56:02.561  INFO 9636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-27 15:56:02.632  INFO 9636 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.estockmarket.stock.repository.StocksMongoDbRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2022-05-27 15:56:02.955  INFO 9636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 376 ms. Found 1 JPA repository interfaces.
+2022-05-27 15:56:02.965  INFO 9636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-27 15:56:02.965  INFO 9636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-05-27 15:56:02.976  INFO 9636 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.estockmarket.stock.repository.StocksRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-05-27 15:56:02.982  INFO 9636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 1 MongoDB repository interfaces.
+2022-05-27 15:56:03.591  INFO 9636 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ab701ec1-ad19-3efc-b241-f3a57ac6bbce
+2022-05-27 15:56:04.696  INFO 9636 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-05-27 15:56:04.711  INFO 9636 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-27 15:56:04.712  INFO 9636 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-27 15:56:05.039  INFO 9636 --- [restartedMain] o.a.c.c.C.[.[.[/api/v1.0/market]         : Initializing Spring embedded WebApplicationContext
+2022-05-27 15:56:05.040  INFO 9636 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7539 ms
+2022-05-27 15:56:06.902  INFO 9636 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-27 15:56:07.209  INFO 9636 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-27 15:56:07.720  INFO 9636 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-27 15:56:07.922  INFO 9636 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-27 15:56:08.716  INFO 9636 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-27 15:56:08.739  INFO 9636 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-05-27 15:56:10.884  INFO 9636 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-27 15:56:10.896  INFO 9636 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-27 15:56:11.218  WARN 9636 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-27 15:56:11.713  WARN 9636 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2022-05-27 15:56:12.365  INFO 9636 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.n8sww.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-2zdg0p-shard-0'}
+2022-05-27 15:56:12.483  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-srv-cluster0.n8sww.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server cluster0-shard-00-02.n8sww.mongodb.net:27017 to client view of cluster
+2022-05-27 15:56:12.509  WARN 9636 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-05-27 15:56:12.595  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-srv-cluster0.n8sww.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server cluster0-shard-00-01.n8sww.mongodb.net:27017 to client view of cluster
+2022-05-27 15:56:12.670  WARN 9636 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-05-27 15:56:12.686  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-srv-cluster0.n8sww.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server cluster0-shard-00-00.n8sww.mongodb.net:27017 to client view of cluster
+2022-05-27 15:56:13.089  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:151344}] to cluster0-shard-00-02.n8sww.mongodb.net:27017
+2022-05-27 15:56:13.089  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.n8sww.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=145537800, setName='atlas-2zdg0p-shard-0', canonicalAddress=cluster0-shard-00-02.n8sww.mongodb.net:27017, hosts=[cluster0-shard-00-02.n8sww.mongodb.net:27017, cluster0-shard-00-00.n8sww.mongodb.net:27017, cluster0-shard-00-01.n8sww.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-01.n8sww.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=8, topologyVersion=TopologyVersion{processId=628aae25a957d92a26f68f0c, counter=3}, lastWriteDate=Fri May 27 15:56:12 IST 2022, lastUpdateTimeNanos=1222547099064000}
+2022-05-27 15:56:13.089  INFO 9636 --- [cluster-rtt-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-00.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:152004}] to cluster0-shard-00-00.n8sww.mongodb.net:27017
+2022-05-27 15:56:13.091  INFO 9636 --- [cluster-rtt-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:161442}] to cluster0-shard-00-01.n8sww.mongodb.net:27017
+2022-05-27 15:56:13.092  INFO 9636 --- [cluster-rtt-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:151344}] to cluster0-shard-00-02.n8sww.mongodb.net:27017
+2022-05-27 15:56:13.122  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:161379}] to cluster0-shard-00-01.n8sww.mongodb.net:27017
+2022-05-27 15:56:13.124  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.n8sww.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=230147300, setName='atlas-2zdg0p-shard-0', canonicalAddress=cluster0-shard-00-01.n8sww.mongodb.net:27017, hosts=[cluster0-shard-00-02.n8sww.mongodb.net:27017, cluster0-shard-00-00.n8sww.mongodb.net:27017, cluster0-shard-00-01.n8sww.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-01.n8sww.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000137, setVersion=8, topologyVersion=TopologyVersion{processId=628aacefd9a5464a45e035a7, counter=6}, lastWriteDate=Fri May 27 15:56:12 IST 2022, lastUpdateTimeNanos=1222547134200400}
+2022-05-27 15:56:13.126  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-00.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:152004}] to cluster0-shard-00-00.n8sww.mongodb.net:27017
+2022-05-27 15:56:13.126  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-00.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.n8sww.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=207773300, setName='atlas-2zdg0p-shard-0', canonicalAddress=cluster0-shard-00-00.n8sww.mongodb.net:27017, hosts=[cluster0-shard-00-02.n8sww.mongodb.net:27017, cluster0-shard-00-00.n8sww.mongodb.net:27017, cluster0-shard-00-01.n8sww.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-01.n8sww.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=8, topologyVersion=TopologyVersion{processId=628aab868ee08a11ebab8aae, counter=4}, lastWriteDate=Fri May 27 15:56:12 IST 2022, lastUpdateTimeNanos=1222547137516100}
+2022-05-27 15:56:13.129  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff0000000000000137 from replica set primary cluster0-shard-00-01.n8sww.mongodb.net:27017
+2022-05-27 15:56:13.129  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 8 from replica set primary cluster0-shard-00-01.n8sww.mongodb.net:27017
+2022-05-27 15:56:13.129  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary cluster0-shard-00-01.n8sww.mongodb.net:27017
+2022-05-27 15:56:14.034  INFO 9636 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1857492f, org.springframework.security.web.context.SecurityContextPersistenceFilter@26a2429e, org.springframework.security.web.header.HeaderWriterFilter@14ae699b, org.springframework.security.web.authentication.logout.LogoutFilter@71116f90, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@134c665a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@52f37f1c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e9615f6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3383cad7, org.springframework.security.web.session.SessionManagementFilter@631a8f3f, org.springframework.security.web.access.ExceptionTranslationFilter@61983810, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@583ffb91]
+2022-05-27 15:56:16.642  INFO 9636 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-05-27 15:56:16.707  WARN 9636 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-05-27 15:56:16.720  INFO 9636 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-05-27 15:56:16.843  INFO 9636 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 56435 (http) with context path '/api/v1.0/market'
+2022-05-27 15:56:16.845  INFO 9636 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 56435
+2022-05-27 15:56:16.850  INFO 9636 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-05-27 15:56:16.910  INFO 9636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-05-27 15:56:16.917  INFO 9636 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 15:56:16.952  INFO 9636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-05-27 15:56:16.953  INFO 9636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-05-27 15:56:16.953  INFO 9636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-05-27 15:56:16.953  INFO 9636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-05-27 15:56:16.953  INFO 9636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-05-27 15:56:16.953  INFO 9636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-05-27 15:56:16.953  INFO 9636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-05-27 15:56:17.787  INFO 9636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-05-27 15:56:17.793  INFO 9636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-05-27 15:56:17.801  INFO 9636 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-05-27 15:56:17.816  INFO 9636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1653647177815 with initial instances count: 0
+2022-05-27 15:56:17.819  INFO 9636 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application STOCK-API with eureka with status UP
+2022-05-27 15:56:17.821  INFO 9636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1653647177821, current=UP, previous=STARTING]
+2022-05-27 15:56:17.824  INFO 9636 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_STOCK-API/host.docker.internal:stock-api:0: registering service...
+2022-05-27 15:56:17.968  INFO 9636 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_STOCK-API/host.docker.internal:stock-api:0 - registration status: 204
+2022-05-27 15:56:18.111  INFO 9636 --- [restartedMain] c.e.stock.StockApiApplication            : Started StockApiApplication in 22.972 seconds (JVM running for 26.263)
+2022-05-27 15:56:47.796  INFO 9636 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-05-27 15:56:47.797  INFO 9636 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-05-27 15:56:47.797  INFO 9636 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-05-27 15:56:47.798  INFO 9636 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-05-27 15:56:47.798  INFO 9636 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-05-27 15:56:47.798  INFO 9636 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2022-05-27 15:56:47.798  INFO 9636 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-05-27 15:56:47.810  INFO 9636 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-05-27 16:01:16.961  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 16:06:16.969  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 16:11:16.983  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 16:16:16.986  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 16:21:17.000  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 16:26:17.002  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 16:31:17.013  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 18:08:54.831  WARN 9636 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h35m45s492ms278µs300ns).
+2022-05-27 18:09:00.162  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-00.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server cluster0-shard-00-00.n8sww.mongodb.net:27017
+
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152) ~[mongodb-driver-core-4.4.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1455) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1059) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576) ~[mongodb-driver-core-4.4.2.jar:na]
+	... 5 common frames omitted
+
+2022-05-27 18:09:00.262  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server cluster0-shard-00-02.n8sww.mongodb.net:27017
+
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152) ~[mongodb-driver-core-4.4.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1455) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1059) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576) ~[mongodb-driver-core-4.4.2.jar:na]
+	... 5 common frames omitted
+
+2022-05-27 18:09:00.329  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-00.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:7, serverValue:1002}] to cluster0-shard-00-00.n8sww.mongodb.net:27017
+2022-05-27 18:09:00.329  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-00.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.n8sww.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=118170100, setName='atlas-2zdg0p-shard-0', canonicalAddress=cluster0-shard-00-00.n8sww.mongodb.net:27017, hosts=[cluster0-shard-00-02.n8sww.mongodb.net:27017, cluster0-shard-00-00.n8sww.mongodb.net:27017, cluster0-shard-00-01.n8sww.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.n8sww.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=8, topologyVersion=TopologyVersion{processId=6290c243cf7551f93eaf3016, counter=4}, lastWriteDate=Fri May 27 18:08:59 IST 2022, lastUpdateTimeNanos=1230514372277900}
+2022-05-27 18:09:00.458  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:8, serverValue:659}] to cluster0-shard-00-02.n8sww.mongodb.net:27017
+2022-05-27 18:09:00.458  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.n8sww.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=136901200, setName='atlas-2zdg0p-shard-0', canonicalAddress=cluster0-shard-00-02.n8sww.mongodb.net:27017, hosts=[cluster0-shard-00-02.n8sww.mongodb.net:27017, cluster0-shard-00-00.n8sww.mongodb.net:27017, cluster0-shard-00-01.n8sww.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.n8sww.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000138, setVersion=8, topologyVersion=TopologyVersion{processId=6290c397fa2c375bcec51ba5, counter=6}, lastWriteDate=Fri May 27 18:09:00 IST 2022, lastUpdateTimeNanos=1230514501021100}
+2022-05-27 18:09:00.458  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff0000000000000138 from replica set primary cluster0-shard-00-02.n8sww.mongodb.net:27017
+2022-05-27 18:09:00.459  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary cluster0-shard-00-02.n8sww.mongodb.net:27017
+2022-05-27 18:09:00.459  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Rediscovering type of existing primary cluster0-shard-00-01.n8sww.mongodb.net:27017
+2022-05-27 18:09:00.748  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server cluster0-shard-00-01.n8sww.mongodb.net:27017
+
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152) ~[mongodb-driver-core-4.4.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1455) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1059) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576) ~[mongodb-driver-core-4.4.2.jar:na]
+	... 5 common frames omitted
+
+2022-05-27 18:09:00.942  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:9, serverValue:568}] to cluster0-shard-00-01.n8sww.mongodb.net:27017
+2022-05-27 18:09:00.942  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.n8sww.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=134321700, setName='atlas-2zdg0p-shard-0', canonicalAddress=cluster0-shard-00-01.n8sww.mongodb.net:27017, hosts=[cluster0-shard-00-02.n8sww.mongodb.net:27017, cluster0-shard-00-00.n8sww.mongodb.net:27017, cluster0-shard-00-01.n8sww.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.n8sww.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=8, topologyVersion=TopologyVersion{processId=6290c4f6b7f681238d7202c9, counter=3}, lastWriteDate=Fri May 27 18:09:00 IST 2022, lastUpdateTimeNanos=1230514985257200}
+2022-05-27 18:09:01.810  INFO 9636 --- [cluster-rtt-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-00.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:10, serverValue:1011}] to cluster0-shard-00-00.n8sww.mongodb.net:27017
+2022-05-27 18:09:02.100  INFO 9636 --- [cluster-rtt-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:11, serverValue:924}] to cluster0-shard-00-02.n8sww.mongodb.net:27017
+2022-05-27 18:09:05.670  INFO 9636 --- [cluster-rtt-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:12, serverValue:577}] to cluster0-shard-00-01.n8sww.mongodb.net:27017
+2022-05-27 18:11:32.471  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 18:16:32.486  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 18:21:32.489  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 18:26:32.494  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 18:31:32.497  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 18:36:32.501  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 20:12:05.018  INFO 9636 --- [cluster-rtt-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:13, serverValue:1927}] to cluster0-shard-00-01.n8sww.mongodb.net:27017
+2022-05-27 20:12:08.763  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-00.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server cluster0-shard-00-00.n8sww.mongodb.net:27017
+
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152) ~[mongodb-driver-core-4.4.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1455) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1059) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576) ~[mongodb-driver-core-4.4.2.jar:na]
+	... 5 common frames omitted
+
+2022-05-27 20:12:08.957  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-00.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:14, serverValue:2008}] to cluster0-shard-00-00.n8sww.mongodb.net:27017
+2022-05-27 20:12:08.958  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-00.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.n8sww.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=131004100, setName='atlas-2zdg0p-shard-0', canonicalAddress=cluster0-shard-00-00.n8sww.mongodb.net:27017, hosts=[cluster0-shard-00-02.n8sww.mongodb.net:27017, cluster0-shard-00-00.n8sww.mongodb.net:27017, cluster0-shard-00-01.n8sww.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-01.n8sww.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=8, topologyVersion=TopologyVersion{processId=6290da3fe0350f0d65b36987, counter=4}, lastWriteDate=Fri May 27 20:12:08 IST 2022, lastUpdateTimeNanos=1237903031748200}
+2022-05-27 20:12:09.393  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server cluster0-shard-00-01.n8sww.mongodb.net:27017
+
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152) ~[mongodb-driver-core-4.4.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1455) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1059) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576) ~[mongodb-driver-core-4.4.2.jar:na]
+	... 5 common frames omitted
+
+2022-05-27 20:12:09.595  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:15, serverValue:2151}] to cluster0-shard-00-01.n8sww.mongodb.net:27017
+2022-05-27 20:12:09.595  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.n8sww.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=137098500, setName='atlas-2zdg0p-shard-0', canonicalAddress=cluster0-shard-00-01.n8sww.mongodb.net:27017, hosts=[cluster0-shard-00-02.n8sww.mongodb.net:27017, cluster0-shard-00-00.n8sww.mongodb.net:27017, cluster0-shard-00-01.n8sww.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-01.n8sww.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000139, setVersion=8, topologyVersion=TopologyVersion{processId=6290db3b80f57694f96af99e, counter=6}, lastWriteDate=Fri May 27 20:12:09 IST 2022, lastUpdateTimeNanos=1237903668791100}
+2022-05-27 20:12:09.595  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff0000000000000139 from replica set primary cluster0-shard-00-01.n8sww.mongodb.net:27017
+2022-05-27 20:12:09.595  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary cluster0-shard-00-01.n8sww.mongodb.net:27017
+2022-05-27 20:12:09.595  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Rediscovering type of existing primary cluster0-shard-00-02.n8sww.mongodb.net:27017
+2022-05-27 20:12:09.895  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server cluster0-shard-00-02.n8sww.mongodb.net:27017
+
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152) ~[mongodb-driver-core-4.4.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1455) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1059) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576) ~[mongodb-driver-core-4.4.2.jar:na]
+	... 5 common frames omitted
+
+2022-05-27 20:12:10.103  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:16, serverValue:1234}] to cluster0-shard-00-02.n8sww.mongodb.net:27017
+2022-05-27 20:12:10.103  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.n8sww.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=144732600, setName='atlas-2zdg0p-shard-0', canonicalAddress=cluster0-shard-00-02.n8sww.mongodb.net:27017, hosts=[cluster0-shard-00-02.n8sww.mongodb.net:27017, cluster0-shard-00-00.n8sww.mongodb.net:27017, cluster0-shard-00-01.n8sww.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-01.n8sww.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=8, topologyVersion=TopologyVersion{processId=6290dc587ca4394e31984970, counter=3}, lastWriteDate=Fri May 27 20:12:09 IST 2022, lastUpdateTimeNanos=1237904176950100}
+2022-05-27 20:12:10.246  INFO 9636 --- [cluster-rtt-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-00.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:17, serverValue:2011}] to cluster0-shard-00-00.n8sww.mongodb.net:27017
+2022-05-27 20:12:11.420  INFO 9636 --- [cluster-rtt-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:18, serverValue:1242}] to cluster0-shard-00-02.n8sww.mongodb.net:27017
+2022-05-27 20:12:22.418  WARN 9636 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h33m27s194ms892µs200ns).
+2022-05-27 20:14:29.676  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 20:19:29.678  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 20:24:29.683  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 20:29:29.694  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 20:34:29.699  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 20:39:29.705  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 20:44:29.714  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 20:49:29.722  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-27 21:03:38.055  WARN 9636 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m45s132ms577µs).
+2022-05-27 21:03:41.281  INFO 9636 --- [cluster-rtt-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:19, serverValue:3430}] to cluster0-shard-00-01.n8sww.mongodb.net:27017
+2022-05-27 21:03:42.757  INFO 9636 --- [cluster-rtt-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:20, serverValue:2426}] to cluster0-shard-00-02.n8sww.mongodb.net:27017
+2022-05-27 21:03:43.683  INFO 9636 --- [cluster-rtt-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-00.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:21, serverValue:3197}] to cluster0-shard-00-00.n8sww.mongodb.net:27017
+2022-05-27 21:03:47.944  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server cluster0-shard-00-02.n8sww.mongodb.net:27017
+
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152) ~[mongodb-driver-core-4.4.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1455) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1059) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576) ~[mongodb-driver-core-4.4.2.jar:na]
+	... 5 common frames omitted
+
+2022-05-27 21:03:48.132  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:22, serverValue:2427}] to cluster0-shard-00-02.n8sww.mongodb.net:27017
+2022-05-27 21:03:48.132  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.n8sww.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=122955400, setName='atlas-2zdg0p-shard-0', canonicalAddress=cluster0-shard-00-02.n8sww.mongodb.net:27017, hosts=[cluster0-shard-00-02.n8sww.mongodb.net:27017, cluster0-shard-00-00.n8sww.mongodb.net:27017, cluster0-shard-00-01.n8sww.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-01.n8sww.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=8, topologyVersion=TopologyVersion{processId=6290dc587ca4394e31984970, counter=3}, lastWriteDate=Fri May 27 21:03:48 IST 2022, lastUpdateTimeNanos=1241002237939400}
+2022-05-27 21:03:55.811  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-00.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server cluster0-shard-00-00.n8sww.mongodb.net:27017
+
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152) ~[mongodb-driver-core-4.4.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1455) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1059) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576) ~[mongodb-driver-core-4.4.2.jar:na]
+	... 5 common frames omitted
+
+2022-05-27 21:03:56.007  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-00.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:23, serverValue:3205}] to cluster0-shard-00-00.n8sww.mongodb.net:27017
+2022-05-27 21:03:56.007  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-00.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.n8sww.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=133335600, setName='atlas-2zdg0p-shard-0', canonicalAddress=cluster0-shard-00-00.n8sww.mongodb.net:27017, hosts=[cluster0-shard-00-02.n8sww.mongodb.net:27017, cluster0-shard-00-00.n8sww.mongodb.net:27017, cluster0-shard-00-01.n8sww.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-01.n8sww.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=8, topologyVersion=TopologyVersion{processId=6290da3fe0350f0d65b36987, counter=4}, lastWriteDate=Fri May 27 21:03:56 IST 2022, lastUpdateTimeNanos=1241010113258000}
+2022-05-27 21:03:56.432  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server cluster0-shard-00-01.n8sww.mongodb.net:27017
+
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152) ~[mongodb-driver-core-4.4.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1455) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1059) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576) ~[mongodb-driver-core-4.4.2.jar:na]
+	... 5 common frames omitted
+
+2022-05-27 21:03:56.948  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:24, serverValue:3557}] to cluster0-shard-00-01.n8sww.mongodb.net:27017
+2022-05-27 21:03:56.949  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.n8sww.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=457927600, setName='atlas-2zdg0p-shard-0', canonicalAddress=cluster0-shard-00-01.n8sww.mongodb.net:27017, hosts=[cluster0-shard-00-02.n8sww.mongodb.net:27017, cluster0-shard-00-00.n8sww.mongodb.net:27017, cluster0-shard-00-01.n8sww.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-01.n8sww.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000139, setVersion=8, topologyVersion=TopologyVersion{processId=6290db3b80f57694f96af99e, counter=6}, lastWriteDate=Fri May 27 21:03:56 IST 2022, lastUpdateTimeNanos=1241011054153000}
+2022-05-27 21:03:56.949  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary cluster0-shard-00-01.n8sww.mongodb.net:27017
+2022-05-27 21:06:44.822  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
