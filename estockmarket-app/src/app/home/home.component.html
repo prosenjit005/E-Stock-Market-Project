@@ -24,15 +24,20 @@
     </div>
 
     <div *ngIf="getAllCompaniesShowFlag">
-        Get all Companies
+        <h2 class="companyListHeading">Companies List</h2>
 
-        <mat-list>
-            <mat-list-item>Item 1</mat-list-item>
+        <mat-list *ngFor="let company of allCompaniesData ; let even = even; let odd = odd"
+            [ngClass]="{ odd: odd, even: even }">
+            <mat-list-item>companyCode: {{company.companyCode}}</mat-list-item>
+            <mat-list-item>companyName: {{company.companyName}}</mat-list-item>
+            <mat-list-item>companyCEO: {{company.companyCEO}}</mat-list-item>
+            <mat-list-item>companyTurnover: {{company.companyTurnover}}</mat-list-item>
+            <mat-list-item>companyWebsite: {{company.companyWebsite}}</mat-list-item>
+            <mat-list-item>stockExchange: {{company.stockExchange}}</mat-list-item>
             <mat-divider></mat-divider>
-            <mat-list-item>Item 2</mat-list-item>
-            <mat-divider></mat-divider>
-            <mat-list-item>Item 3</mat-list-item>
         </mat-list>
+
+
     </div>
 
     <div *ngIf="addStocksShowFlag">

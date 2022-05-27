@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CompanyService } from '../services/company.service';
+import { Company, CompanyService } from '../services/company.service';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
   getCompanyShowFlag = false;
   getAllCompaniesShowFlag = false;
   addStocksShowFlag = false;
+
+  allCompaniesData: Company[] = [];
 
   constructor(public companyService:CompanyService) { }
 
@@ -34,6 +36,22 @@ export class HomeComponent implements OnInit {
   }
 
   getAllCompaniesAction() {
+
+    // this.companyService.getAllCompanies()
+    // .subscribe((data: Company[]) => this.allCompaniesData = { ...data });
+
+
+    this.companyService.getAllCompanies()
+            .subscribe(data => {
+               this.allCompaniesData = data
+               console.log(this.allCompaniesData);
+               console.log(this.allCompaniesData.length);
+            });
+
+
+
+   
+
     this.addCompanyShowFlag = false;
     this.getCompanyShowFlag = false;
     this.getAllCompaniesShowFlag = true;

@@ -5,3 +5,15 @@
 .companyBtns1{
     padding: 0 10px 0 0;
 }
+
+.odd{
+    background-color: lightgray;
+}
+
+.companyListHeading{
+    padding: 20px 0 10px 0;
+}
+
+.mat-list-item{
+    height: 25px !important;
+}

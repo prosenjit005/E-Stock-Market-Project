@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonService } from './services/common.service';
 import { CompanyService } from './services/company.service';
 import { StocksService } from './services/stocks.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { StocksService } from './services/stocks.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule, HttpClientModule
   ],
   providers: [CommonService, CompanyService, StocksService],
   bootstrap: [AppComponent]
