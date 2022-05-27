@@ -1,1 +1,43 @@
-<p>home works!</p>
+<div class="mainContent" id="homeMainContId">
+
+    <h1>
+        Companies
+    </h1>
+
+    <div>
+        <span class="companyBtns1"><button mat-raised-button color="primary" (click)="addCompanyAction()">Add
+                Company</button></span>
+        <span class="companyBtns"><button mat-raised-button color="primary" (click)="getCompanyAction()">Get Company
+                Info</button></span>
+        <span class="companyBtns"><button mat-raised-button color="primary" (click)="getAllCompaniesAction()">Get All
+                Companies</button></span>
+        <span class="companyBtns"><button mat-raised-button color="primary" (click)="addStocksAction()">Add
+                Stocks</button></span>
+    </div>
+
+    <div *ngIf="addCompanyShowFlag">
+        Add Company
+    </div>
+
+    <div *ngIf="getCompanyShowFlag">
+        Get Company
+    </div>
+
+    <div *ngIf="getAllCompaniesShowFlag">
+        Get all Companies
+
+        <mat-list>
+            <mat-list-item>Item 1</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>Item 2</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>Item 3</mat-list-item>
+        </mat-list>
+    </div>
+
+    <div *ngIf="addStocksShowFlag">
+        Add Stocks
+    </div>
+
+
+</div>

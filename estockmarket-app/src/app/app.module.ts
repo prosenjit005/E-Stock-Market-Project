@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
 import { CommonService } from './services/common.service';
+import { CompanyService } from './services/company.service';
+import { StocksService } from './services/stocks.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,7 @@ import { CommonService } from './services/common.service';
     MaterialModule,
     FormsModule
   ],
-  providers: [CommonService],
+  providers: [CommonService, CompanyService, StocksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
