@@ -6,3 +6,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mainContent{
     padding: 20px;
 }
+
+.custom-error-class{
+    padding: 20px 0 0 0;
+    color: red;
+}
