@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Company, CompanyService } from '../services/company.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ErrorSnackBarComponent } from '../errorSnackBars/error-snack-bar/error-snack-bar.component';
+import { SuccessSnackBarComponent } from '../errorSnackBars/success-snack-bar/success-snack-bar.component';
 
 @Component({
   selector: 'app-home',
@@ -22,9 +25,17 @@ export class HomeComponent implements OnInit {
   companyWebsite: string = "";
   stockExchange: string = "";
 
-  constructor(public companyService: CompanyService) { }
+  constructor(public companyService: CompanyService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    this.getAllCompaniesList();
+  }
+
+  getAllCompaniesList() {
+    this.companyService.getAllCompanies()
+      .subscribe(data => {
+        this.allCompaniesData = data
+      });
   }
 
   addCompanyAction() {
@@ -65,20 +76,53 @@ export class HomeComponent implements OnInit {
   }
 
   saveCompany() {
-    let companyData = {} as Company;
-    companyData.companyCode = this.companyCode;
-    companyData.companyName = this.companyName;
-    companyData.companyCEO = this.companyCEO;
-    companyData.companyTurnover = this.companyTurnover;
-    companyData.companyWebsite = this.companyWebsite;
-    companyData.stockExchange = this.stockExchange;
+    this.companyService.getAllCompanies()
+      .subscribe(data => {
+        this.allCompaniesData = data
 
-    console.log(companyData);
+        let companyData = {} as Company;
+        companyData.companyCode = this.companyCode;
+        companyData.companyName = this.companyName;
+        companyData.companyCEO = this.companyCEO;
+        companyData.companyTurnover = this.companyTurnover;
+        companyData.companyWebsite = this.companyWebsite;
+        companyData.stockExchange = this.stockExchange;
 
-    this.companyService.saveCompanyDetails(companyData)
-    .subscribe(data => {
-      console.log(data);
-    });
+        console.log(companyData);
+
+        //this will filter if the companyCode is already present.
+        let companyPresentObj = this.allCompaniesData.find(obj => obj.companyCode.toLocaleLowerCase() ==
+          companyData.companyCode.toLocaleLowerCase());
+        console.log("Company Present=", companyPresentObj);
+
+        if (null != companyPresentObj) {
+          this._snackBar.openFromComponent(ErrorSnackBarComponent, {
+            duration: 5 * 1000,
+            panelClass: ['custom-error-snackbar-style'],
+            horizontalPosition: 'center',
+            verticalPosition: 'top'
+          });
+
+          
+        } else {
+          //company code is unique
+          this.companyService.saveCompanyDetails(companyData)
+            .subscribe(data => {
+              console.log(data);
+              this._snackBar.openFromComponent(SuccessSnackBarComponent, {
+                duration: 5 * 1000,
+                panelClass: ['custom-success-snackbar-style'],
+                horizontalPosition: 'center',
+                verticalPosition: 'top'
+              });
+            });
+        }
+
+
+
+
+      });
+
 
   }
 
