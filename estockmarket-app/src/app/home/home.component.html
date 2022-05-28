@@ -104,20 +104,73 @@
     <div *ngIf="getAllCompaniesShowFlag">
         <h2 class="companyListHeading">Companies List</h2>
 
-        <mat-list *ngFor="let company of allCompaniesData ; let even = even; let odd = odd"
-            [ngClass]="{ odd: odd, even: even }">
-            <mat-list-item>companyCode: {{company.companyCode}}</mat-list-item>
-            <mat-list-item>companyName: {{company.companyName}}</mat-list-item>
-            <mat-list-item>companyCEO: {{company.companyCEO}}</mat-list-item>
-            <mat-list-item>companyTurnover: {{company.companyTurnover}}</mat-list-item>
-            <mat-list-item>companyWebsite: {{company.companyWebsite}}</mat-list-item>
-            <mat-list-item>stockExchange: {{company.stockExchange}}</mat-list-item>
-            <mat-divider></mat-divider>
-        </mat-list>
-
         <div *ngIf="allCompaniesData.length==0">
             No Companies Data Available!
         </div>
+
+
+        <!-- experiment starts ***************** -->
+
+        <table mat-table [dataSource]="allCompaniesData" #mytable class="my-table mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+            <!-- companyCode Column -->
+            <ng-container matColumnDef="companyCode">
+                <th mat-header-cell *matHeaderCellDef> Company Code </th>
+                <td mat-cell *matCellDef="let element"> {{element.companyCode}} </td>
+            </ng-container>
+
+            <!-- companyName Column -->
+            <ng-container matColumnDef="companyName">
+                <th mat-header-cell *matHeaderCellDef> Company Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.companyName}} </td>
+            </ng-container>
+
+            <!-- companyCEO Column -->
+            <ng-container matColumnDef="companyCEO">
+                <th mat-header-cell *matHeaderCellDef> Company CEO </th>
+                <td mat-cell *matCellDef="let element"> {{element.companyCEO}} </td>
+            </ng-container>
+
+            <!-- companyTurnover Column -->
+            <ng-container matColumnDef="companyTurnover">
+                <th mat-header-cell *matHeaderCellDef> Company Turnover </th>
+                <td mat-cell *matCellDef="let element"> {{element.companyTurnover}} </td>
+            </ng-container>
+
+            <!-- companyWebsite Column -->
+            <ng-container matColumnDef="companyWebsite">
+                <th mat-header-cell *matHeaderCellDef> Company Website </th>
+                <td mat-cell *matCellDef="let element"> {{element.companyWebsite}} </td>
+            </ng-container>
+
+            <!-- stockExchange Column -->
+            <ng-container matColumnDef="stockExchange">
+                <th mat-header-cell *matHeaderCellDef> Stock Exchange </th>
+                <td mat-cell *matCellDef="let element"> {{element.stockExchange}} </td>
+            </ng-container>
+
+            <!-- Action Column -->
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> Action </th>
+                <td mat-cell *matCellDef="let element" class="action-link">
+                    <!-- <a (click)="openTableDialog('Update',element)">
+                        <mat-icon>preview</mat-icon>
+                    </a> -->
+                    <a (click)="openTableDialog('Delete',element)" class="custom-mat-icon">
+                        <mat-icon>delete</mat-icon>
+                    </a>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <!-- experiment ends ******************* -->
+
 
     </div>
 

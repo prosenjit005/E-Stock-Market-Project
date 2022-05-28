@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   addStocksShowFlag = false;
 
   allCompaniesData: Company[] = [];
+  displayedColumns: string[] = ['companyCode', 'companyName', 'companyCEO', 'companyTurnover', 'companyWebsite', 'stockExchange', 'action'];
 
   companyCode: string = "";
   companyName: string = "";
@@ -139,6 +140,10 @@ export class HomeComponent implements OnInit {
       });
 
 
+  }
+
+  openTableDialog(action: string, element: any) {
+    console.log(element);
   }
 
 }

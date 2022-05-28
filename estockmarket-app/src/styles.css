@@ -11,6 +11,10 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+table {
+    width: 100%;
+}
+
 .mainContent {
     padding: 20px;
     min-height: 585px;
@@ -32,3 +36,9 @@ body {
     background-color: #DFF2BF;
     margin: 70px 0 0 0 !important;
 }
+
+.custom-mat-icon:hover {
+    color: #D8000C;
+    cursor: pointer;
+}
+
