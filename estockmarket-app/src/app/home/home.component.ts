@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   companyWebsite: string = "";
   stockExchange: string = "";
 
-  constructor(public companyService:CompanyService) { }
+  constructor(public companyService: CompanyService) { }
 
   ngOnInit(): void {
   }
@@ -44,20 +44,12 @@ export class HomeComponent implements OnInit {
 
   getAllCompaniesAction() {
 
-    // this.companyService.getAllCompanies()
-    // .subscribe((data: Company[]) => this.allCompaniesData = { ...data });
-
-
     this.companyService.getAllCompanies()
-            .subscribe(data => {
-               this.allCompaniesData = data
-               console.log(this.allCompaniesData);
-               console.log(this.allCompaniesData.length);
-            });
-
-
-
-   
+      .subscribe(data => {
+        this.allCompaniesData = data
+        console.log(this.allCompaniesData);
+        console.log(this.allCompaniesData.length);
+      });
 
     this.addCompanyShowFlag = false;
     this.getCompanyShowFlag = false;
@@ -73,7 +65,21 @@ export class HomeComponent implements OnInit {
   }
 
   saveCompany() {
-    
+    let companyData = {} as Company;
+    companyData.companyCode = this.companyCode;
+    companyData.companyName = this.companyName;
+    companyData.companyCEO = this.companyCEO;
+    companyData.companyTurnover = this.companyTurnover;
+    companyData.companyWebsite = this.companyWebsite;
+    companyData.stockExchange = this.stockExchange;
+
+    console.log(companyData);
+
+    this.companyService.saveCompanyDetails(companyData)
+    .subscribe(data => {
+      console.log(data);
+    });
+
   }
 
 }

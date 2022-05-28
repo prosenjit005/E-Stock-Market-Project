@@ -9,7 +9,7 @@ export interface Company {
   companyCode: string;
   companyName: string;
   companyCEO: string;
-  companyTurnover: string;
+  companyTurnover: number;
   companyWebsite: string;
   stockExchange: string;
 }
@@ -20,6 +20,7 @@ export interface Company {
 export class CompanyService {
 
   getAllCompaniesUrl = '/getall';
+  saveCompanyUrl = '/register';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -35,7 +36,7 @@ export class CompanyService {
   }
 
   saveCompanyDetails(company: Company): Observable<Company> {
-    return this.http.post<Company>(this.commonService.httpBaseCompanyUri + this.getAllCompaniesUrl, company, this.httpOptions);
+    return this.http.post<Company>(this.commonService.httpBaseCompanyUri + this.saveCompanyUrl, company, this.httpOptions);
   }
 
 }

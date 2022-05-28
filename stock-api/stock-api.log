@@ -478,3 +478,179 @@ Caused by: java.net.SocketTimeoutException: Read timed out
 2022-05-27 21:03:56.949  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.n8sww.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=457927600, setName='atlas-2zdg0p-shard-0', canonicalAddress=cluster0-shard-00-01.n8sww.mongodb.net:27017, hosts=[cluster0-shard-00-02.n8sww.mongodb.net:27017, cluster0-shard-00-00.n8sww.mongodb.net:27017, cluster0-shard-00-01.n8sww.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-01.n8sww.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff0000000000000139, setVersion=8, topologyVersion=TopologyVersion{processId=6290db3b80f57694f96af99e, counter=6}, lastWriteDate=Fri May 27 21:03:56 IST 2022, lastUpdateTimeNanos=1241011054153000}
 2022-05-27 21:03:56.949  INFO 9636 --- [cluster-ClusterId{value='6290a74429a8935f05bd0b30', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary cluster0-shard-00-01.n8sww.mongodb.net:27017
 2022-05-27 21:06:44.822  INFO 9636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-28 20:54:09.548  INFO 17224 --- [restartedMain] c.e.stock.StockApiApplication            : Starting StockApiApplication using Java 17.0.2 on DESKTOP-9SJV7N9 with PID 17224 (C:\Prosenjit\My_IT\STSworkspaces\workspace1\E-Stock-Market-Project\stock-api\target\classes started by PROSENJIT in C:\Prosenjit\My_IT\STSworkspaces\workspace1\E-Stock-Market-Project\stock-api)
+2022-05-28 20:54:09.553  INFO 17224 --- [restartedMain] c.e.stock.StockApiApplication            : No active profile set, falling back to 1 default profile: "default"
+2022-05-28 20:54:09.904  INFO 17224 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-28 20:54:09.906  INFO 17224 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-28 20:54:20.595  INFO 17224 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-28 20:54:20.598  INFO 17224 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-28 20:54:20.726  INFO 17224 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.estockmarket.stock.repository.StocksMongoDbRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2022-05-28 20:54:21.418  INFO 17224 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 807 ms. Found 1 JPA repository interfaces.
+2022-05-28 20:54:21.444  INFO 17224 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-28 20:54:21.445  INFO 17224 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-05-28 20:54:21.458  INFO 17224 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.estockmarket.stock.repository.StocksRepository. If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository.
+2022-05-28 20:54:21.465  INFO 17224 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 1 MongoDB repository interfaces.
+2022-05-28 20:54:23.271  INFO 17224 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ab701ec1-ad19-3efc-b241-f3a57ac6bbce
+2022-05-28 20:54:26.924  INFO 17224 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-05-28 20:54:26.937  INFO 17224 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-28 20:54:26.938  INFO 17224 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-05-28 20:54:27.419  INFO 17224 --- [restartedMain] o.a.c.c.C.[.[.[/api/v1.0/market]         : Initializing Spring embedded WebApplicationContext
+2022-05-28 20:54:27.419  INFO 17224 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 17511 ms
+2022-05-28 20:54:32.672  INFO 17224 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-28 20:54:32.832  INFO 17224 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-28 20:54:33.436  INFO 17224 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-28 20:54:33.748  INFO 17224 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-28 20:54:35.018  INFO 17224 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-28 20:54:35.070  INFO 17224 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-05-28 20:54:37.732  INFO 17224 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-28 20:54:37.748  INFO 17224 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-28 20:54:38.958  WARN 17224 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-28 20:54:39.697  WARN 17224 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2022-05-28 20:54:40.716  INFO 17224 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[127.0.0.1:27017], srvHost=cluster0.n8sww.mongodb.net, mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-2zdg0p-shard-0'}
+2022-05-28 20:54:40.953  INFO 17224 --- [cluster-ClusterId{value='62923eb8519ffd17d05af059', description='null'}-srv-cluster0.n8sww.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server cluster0-shard-00-02.n8sww.mongodb.net:27017 to client view of cluster
+2022-05-28 20:54:41.300  WARN 17224 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-05-28 20:54:41.457  INFO 17224 --- [cluster-ClusterId{value='62923eb8519ffd17d05af059', description='null'}-srv-cluster0.n8sww.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server cluster0-shard-00-01.n8sww.mongodb.net:27017 to client view of cluster
+2022-05-28 20:54:41.706  WARN 17224 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-05-28 20:54:41.866  INFO 17224 --- [cluster-ClusterId{value='62923eb8519ffd17d05af059', description='null'}-srv-cluster0.n8sww.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server cluster0-shard-00-00.n8sww.mongodb.net:27017 to client view of cluster
+2022-05-28 20:54:42.214  INFO 17224 --- [cluster-ClusterId{value='62923eb8519ffd17d05af059', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:869}] to cluster0-shard-00-01.n8sww.mongodb.net:27017
+2022-05-28 20:54:42.216  INFO 17224 --- [cluster-ClusterId{value='62923eb8519ffd17d05af059', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-01.n8sww.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=162334200, setName='atlas-2zdg0p-shard-0', canonicalAddress=cluster0-shard-00-01.n8sww.mongodb.net:27017, hosts=[cluster0-shard-00-02.n8sww.mongodb.net:27017, cluster0-shard-00-00.n8sww.mongodb.net:27017, cluster0-shard-00-01.n8sww.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.n8sww.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=8, topologyVersion=TopologyVersion{processId=6292393d5ac420d3a18de5eb, counter=3}, lastWriteDate=Sat May 28 20:54:41 IST 2022, lastUpdateTimeNanos=1326856348394600}
+2022-05-28 20:54:42.217  INFO 17224 --- [cluster-rtt-ClusterId{value='62923eb8519ffd17d05af059', description='null'}-cluster0-shard-00-01.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:869}] to cluster0-shard-00-01.n8sww.mongodb.net:27017
+2022-05-28 20:54:42.223  INFO 17224 --- [cluster-ClusterId{value='62923eb8519ffd17d05af059', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1285}] to cluster0-shard-00-02.n8sww.mongodb.net:27017
+2022-05-28 20:54:42.224  INFO 17224 --- [cluster-rtt-ClusterId{value='62923eb8519ffd17d05af059', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:1285}] to cluster0-shard-00-02.n8sww.mongodb.net:27017
+2022-05-28 20:54:42.225  INFO 17224 --- [cluster-ClusterId{value='62923eb8519ffd17d05af059', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-02.n8sww.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=231140300, setName='atlas-2zdg0p-shard-0', canonicalAddress=cluster0-shard-00-02.n8sww.mongodb.net:27017, hosts=[cluster0-shard-00-02.n8sww.mongodb.net:27017, cluster0-shard-00-00.n8sww.mongodb.net:27017, cluster0-shard-00-01.n8sww.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.n8sww.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000013a, setVersion=8, topologyVersion=TopologyVersion{processId=629237c8a5749384d40722ba, counter=6}, lastWriteDate=Sat May 28 20:54:41 IST 2022, lastUpdateTimeNanos=1326856360431100}
+2022-05-28 20:54:42.299  INFO 17224 --- [cluster-ClusterId{value='62923eb8519ffd17d05af059', description='null'}-cluster0-shard-00-00.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:1280}] to cluster0-shard-00-00.n8sww.mongodb.net:27017
+2022-05-28 20:54:42.300  INFO 17224 --- [cluster-ClusterId{value='62923eb8519ffd17d05af059', description='null'}-cluster0-shard-00-00.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=cluster0-shard-00-00.n8sww.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=118147100, setName='atlas-2zdg0p-shard-0', canonicalAddress=cluster0-shard-00-00.n8sww.mongodb.net:27017, hosts=[cluster0-shard-00-02.n8sww.mongodb.net:27017, cluster0-shard-00-00.n8sww.mongodb.net:27017, cluster0-shard-00-01.n8sww.mongodb.net:27017], passives=[], arbiters=[], primary='cluster0-shard-00-02.n8sww.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=8, topologyVersion=TopologyVersion{processId=6292365aba31013f62024c3a, counter=4}, lastWriteDate=Sat May 28 20:54:41 IST 2022, lastUpdateTimeNanos=1326856436621400}
+2022-05-28 20:54:42.321  INFO 17224 --- [cluster-rtt-ClusterId{value='62923eb8519ffd17d05af059', description='null'}-cluster0-shard-00-00.n8sww.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:1280}] to cluster0-shard-00-00.n8sww.mongodb.net:27017
+2022-05-28 20:54:42.594  INFO 17224 --- [cluster-ClusterId{value='62923eb8519ffd17d05af059', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff000000000000013a from replica set primary cluster0-shard-00-02.n8sww.mongodb.net:27017
+2022-05-28 20:54:42.596  INFO 17224 --- [cluster-ClusterId{value='62923eb8519ffd17d05af059', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 8 from replica set primary cluster0-shard-00-02.n8sww.mongodb.net:27017
+2022-05-28 20:54:42.596  INFO 17224 --- [cluster-ClusterId{value='62923eb8519ffd17d05af059', description='null'}-cluster0-shard-00-02.n8sww.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary cluster0-shard-00-02.n8sww.mongodb.net:27017
+2022-05-28 20:54:44.340  INFO 17224 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2aa96036, org.springframework.security.web.context.SecurityContextPersistenceFilter@34bedde3, org.springframework.security.web.header.HeaderWriterFilter@23918cbd, org.springframework.security.web.authentication.logout.LogoutFilter@3b605c73, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4049372b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7be926c7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a178b61, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3a566008, org.springframework.security.web.session.SessionManagementFilter@4b08fcf7, org.springframework.security.web.access.ExceptionTranslationFilter@4bc5ba84, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@772bd8c7]
+2022-05-28 20:54:49.916  INFO 17224 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-05-28 20:54:50.021  WARN 17224 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-05-28 20:54:50.042  INFO 17224 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-05-28 20:54:50.432  INFO 17224 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 65474 (http) with context path '/api/v1.0/market'
+2022-05-28 20:54:50.435  INFO 17224 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 65474
+2022-05-28 20:54:50.446  INFO 17224 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-05-28 20:54:50.570  INFO 17224 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-05-28 20:54:50.590  INFO 17224 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-28 20:54:50.665  INFO 17224 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-05-28 20:54:50.669  INFO 17224 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-05-28 20:54:50.669  INFO 17224 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-05-28 20:54:50.669  INFO 17224 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-05-28 20:54:50.670  INFO 17224 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-05-28 20:54:50.671  INFO 17224 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-05-28 20:54:50.671  INFO 17224 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-05-28 20:54:51.639  INFO 17224 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-05-28 20:54:51.697  INFO 17224 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-05-28 20:54:51.712  INFO 17224 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-05-28 20:54:51.721  INFO 17224 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1653751491719 with initial instances count: 0
+2022-05-28 20:54:51.725  INFO 17224 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application STOCK-API with eureka with status UP
+2022-05-28 20:54:51.725  INFO 17224 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1653751491725, current=UP, previous=STARTING]
+2022-05-28 20:54:51.728  INFO 17224 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_STOCK-API/host.docker.internal:stock-api:0: registering service...
+2022-05-28 20:54:52.009  INFO 17224 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_STOCK-API/host.docker.internal:stock-api:0 - registration status: 204
+2022-05-28 20:54:52.337  INFO 17224 --- [restartedMain] c.e.stock.StockApiApplication            : Started StockApiApplication in 47.547 seconds (JVM running for 52.652)
+2022-05-28 20:55:21.659  INFO 17224 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-05-28 20:55:21.660  INFO 17224 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-05-28 20:55:21.660  INFO 17224 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-05-28 20:55:21.660  INFO 17224 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-05-28 20:55:21.661  INFO 17224 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-05-28 20:55:21.661  INFO 17224 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2022-05-28 20:55:21.661  INFO 17224 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-05-28 20:55:21.685  INFO 17224 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-05-28 20:59:50.674  INFO 17224 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-28 21:04:50.684  INFO 17224 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-28 21:09:15.345  INFO 17224 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[.[.[/api/v1.0/market]         : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-28 21:09:15.345  INFO 17224 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-28 21:09:15.349  INFO 17224 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-05-28 21:09:15.528  WARN 17224 --- [http-nio-auto-1-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [131] milliseconds.
+2022-05-28 21:09:15.610  INFO 17224 --- [http-nio-auto-1-exec-1] c.e.s.controller.StocksApiController     : deleteCompanyStocks: input companycode=C001
+2022-05-28 21:09:15.777  INFO 17224 --- [http-nio-auto-1-exec-1] c.e.s.controller.StocksApiController     : deleteCompanyStocks: sending to kafka: CRUD_D: stocksList.get(0)=Stocks(id=74, companyCode=C001, stockPrice=10.3, stockDateTime=2022-05-24 11:44:30.0)
+2022-05-28 21:09:15.778  INFO 17224 --- [http-nio-auto-1-exec-1] c.e.stock.service.StocksServicesImpl     : sendToKafka: stocks=Stocks(id=74, companyCode=C001, stockPrice=10.3, stockDateTime=2022-05-24 11:44:30.0), cRUD=D
+2022-05-28 21:09:15.781  INFO 17224 --- [http-nio-auto-1-exec-1] c.e.stock.service.StocksServicesImpl     : sendToKafka: DbSyncTopicStocksDto=DbSyncTopicStocksDto(stocks=Stocks(id=74, companyCode=C001, stockPrice=10.3, stockDateTime=2022-05-24 11:44:30.0), crudOps=D)
+2022-05-28 21:09:15.862  INFO 17224 --- [http-nio-auto-1-exec-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2022-05-28 21:09:15.965  INFO 17224 --- [http-nio-auto-1-exec-1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Instantiated an idempotent producer.
+2022-05-28 21:09:16.098  INFO 17224 --- [http-nio-auto-1-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.0.1
+2022-05-28 21:09:16.098  INFO 17224 --- [http-nio-auto-1-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8e30984f43e64d8b
+2022-05-28 21:09:16.099  INFO 17224 --- [http-nio-auto-1-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1653752356093
+2022-05-28 21:09:17.136  INFO 17224 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Resetting the last seen epoch of partition dbSyncTopicStocks-0 to 0 since the associated topicId changed from null to ioqyX6nXTuidMU5hjuDaRQ
+2022-05-28 21:09:17.141  INFO 17224 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: sVUu0fqxQb-BrekEPITbGw
+2022-05-28 21:09:17.144  INFO 17224 --- [kafka-producer-network-thread | producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=producer-1] ProducerId set to 12000 with epoch 0
+2022-05-28 21:09:24.754  INFO 17224 --- [http-nio-auto-1-exec-2] c.e.s.controller.StocksApiController     : deleteCompanyStocks: input companycode=C002
+2022-05-28 21:09:24.770  INFO 17224 --- [http-nio-auto-1-exec-2] c.e.s.controller.StocksApiController     : deleteCompanyStocks: sending to kafka: CRUD_D: stocksList.get(0)=Stocks(id=78, companyCode=C002, stockPrice=12.3, stockDateTime=2022-05-26 19:04:35.0)
+2022-05-28 21:09:24.770  INFO 17224 --- [http-nio-auto-1-exec-2] c.e.stock.service.StocksServicesImpl     : sendToKafka: stocks=Stocks(id=78, companyCode=C002, stockPrice=12.3, stockDateTime=2022-05-26 19:04:35.0), cRUD=D
+2022-05-28 21:09:24.770  INFO 17224 --- [http-nio-auto-1-exec-2] c.e.stock.service.StocksServicesImpl     : sendToKafka: DbSyncTopicStocksDto=DbSyncTopicStocksDto(stocks=Stocks(id=78, companyCode=C002, stockPrice=12.3, stockDateTime=2022-05-26 19:04:35.0), crudOps=D)
+2022-05-28 21:09:29.128  INFO 17224 --- [http-nio-auto-1-exec-3] c.e.s.controller.StocksApiController     : deleteCompanyStocks: input companycode=C003
+2022-05-28 21:09:32.588  INFO 17224 --- [http-nio-auto-1-exec-4] c.e.s.controller.StocksApiController     : deleteCompanyStocks: input companycode=C004
+2022-05-28 21:09:50.696  INFO 17224 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-28 21:14:50.701  INFO 17224 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

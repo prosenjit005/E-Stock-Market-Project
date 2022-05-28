@@ -5,6 +5,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .mainContent{
     padding: 20px;
+    min-height: 585px;
 }
 
 .custom-error-class{
