@@ -44,7 +44,8 @@
             <div>
                 <mat-form-field appearance="fill" class="userNameDiv">
                     <mat-label>Company Turnover</mat-label>
-                    <input matInput [(ngModel)]="companyTurnover" id="companyTurnover" name="companyTurnover" type="number">
+                    <input matInput [(ngModel)]="companyTurnover" id="companyTurnover" name="companyTurnover"
+                        type="number">
                 </mat-form-field>
             </div>
 
@@ -70,7 +71,34 @@
     </div>
 
     <div *ngIf="getCompanyShowFlag">
-        Get Company
+        <h2 class="companyListHeading">Get Company Info</h2>
+
+        <form class="example-form">
+            <div>
+                <mat-form-field appearance="fill" class="userNameDiv">
+                    <mat-label>Company Code</mat-label>
+                    <input matInput placeholder="Ex. C001" [(ngModel)]="searchcompanyCode" id="searchcompanyCode"
+                        name="searchcompanyCode">
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" (click)="searchCompany()"
+                    class="searchCompanyBtn">Search</button>
+            </div>
+
+            <div *ngIf="searchCompanyData!=null">
+                <mat-list>
+                    <mat-list-item>companyCode: {{searchCompanyData?.companyCode}}</mat-list-item>
+                    <mat-list-item>companyName: {{searchCompanyData?.companyName}}</mat-list-item>
+                    <mat-list-item>companyCEO: {{searchCompanyData?.companyCEO}}</mat-list-item>
+                    <mat-list-item>companyTurnover: {{searchCompanyData?.companyTurnover}}</mat-list-item>
+                    <mat-list-item>companyWebsite: {{searchCompanyData?.companyWebsite}}</mat-list-item>
+                    <mat-list-item>stockExchange: {{searchCompanyData?.stockExchange}}</mat-list-item>
+                </mat-list>
+            </div>
+            <div *ngIf="searchCompanyData==null && isSearchBtnClicked" class="custom-error-class">
+                No Company found with the given Company Code. Please try again.
+            </div>
+        </form>
     </div>
 
     <div *ngIf="getAllCompaniesShowFlag">

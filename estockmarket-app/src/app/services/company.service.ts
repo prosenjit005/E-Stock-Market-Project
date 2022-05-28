@@ -21,6 +21,7 @@ export class CompanyService {
 
   getAllCompaniesUrl = '/getall';
   saveCompanyUrl = '/register';
+  getCompanyInfoUrl = '/info';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -38,5 +39,10 @@ export class CompanyService {
   saveCompanyDetails(company: Company): Observable<Company> {
     return this.http.post<Company>(this.commonService.httpBaseCompanyUri + this.saveCompanyUrl, company, this.httpOptions);
   }
+
+  getCompanyInfo(companyCode: string): Observable<Company> {
+    return this.http.get<Company>(this.commonService.httpBaseCompanyUri + this.getCompanyInfoUrl + "/" + companyCode, this.httpOptions)
+  }
+
 
 }

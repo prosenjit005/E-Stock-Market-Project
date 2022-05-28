@@ -25,6 +25,10 @@ export class HomeComponent implements OnInit {
   companyWebsite: string = "";
   stockExchange: string = "";
 
+  searchcompanyCode: string = "";//search for this company
+  searchCompanyData!: Company;
+  isSearchBtnClicked: boolean = false;//to know whether the search button was clicked or not
+
   constructor(public companyService: CompanyService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
@@ -51,6 +55,17 @@ export class HomeComponent implements OnInit {
     this.getCompanyShowFlag = true;
     this.getAllCompaniesShowFlag = false;
     this.addStocksShowFlag = false;
+  }
+
+  searchCompany() {
+    if (null != this.searchcompanyCode && this.searchcompanyCode != "") {
+      this.isSearchBtnClicked = true;
+      this.companyService.getCompanyInfo(this.searchcompanyCode)
+        .subscribe(data => {
+          console.log(data);
+          this.searchCompanyData = data;
+        });
+    }
   }
 
   getAllCompaniesAction() {
@@ -103,7 +118,7 @@ export class HomeComponent implements OnInit {
             verticalPosition: 'top'
           });
 
-          
+
         } else {
           //company code is unique
           this.companyService.saveCompanyDetails(companyData)

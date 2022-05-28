@@ -1,19 +1,23 @@
-.companyBtns{
+.companyBtns {
     padding: 0 10px 0 10px;
 }
 
-.companyBtns1{
+.companyBtns1 {
     padding: 0 10px 0 0;
 }
 
-.odd{
+.odd {
     background-color: lightgray;
 }
 
-.companyListHeading{
+.companyListHeading {
     padding: 20px 0 10px 0;
 }
 
-.mat-list-item{
+.mat-list-item {
     height: 25px !important;
+}
+
+.searchCompanyBtn {
+    margin: 0 0 0 20px;
 }
