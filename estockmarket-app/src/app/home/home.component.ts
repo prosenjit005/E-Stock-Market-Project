@@ -3,6 +3,8 @@ import { Company, CompanyService } from '../services/company.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorSnackBarComponent } from '../errorSnackBars/error-snack-bar/error-snack-bar.component';
 import { SuccessSnackBarComponent } from '../errorSnackBars/success-snack-bar/success-snack-bar.component';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -30,7 +32,7 @@ export class HomeComponent implements OnInit {
   searchCompanyData!: Company;
   isSearchBtnClicked: boolean = false;//to know whether the search button was clicked or not
 
-  constructor(public companyService: CompanyService, private _snackBar: MatSnackBar) { }
+  constructor(public companyService: CompanyService, private _snackBar: MatSnackBar, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getAllCompaniesList();
@@ -142,8 +144,13 @@ export class HomeComponent implements OnInit {
 
   }
 
-  openTableDialog(action: string, element: any) {
+  openTableDialog(action: string, element: Company) {
     console.log(element);
+
+    this.dialog.open(DeleteDialogComponent, {
+      data: element,
+    });
+
   }
 
 }

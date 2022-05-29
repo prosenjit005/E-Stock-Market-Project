@@ -14,6 +14,7 @@ import { CommonService } from './services/common.service';
 import { CompanyService } from './services/company.service';
 import { StocksService } from './services/stocks.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,
