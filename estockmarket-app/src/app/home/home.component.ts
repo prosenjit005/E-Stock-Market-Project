@@ -6,6 +6,7 @@ import { SuccessSnackBarComponent } from '../errorSnackBars/success-snack-bar/su
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
 import { Stocks, StocksService } from '../services/stocks.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -37,8 +38,24 @@ export class HomeComponent implements OnInit {
   stocksCompanyCode: string = "";
   stcoksCompanyTurnover!: number;
 
+  stockDateRange: FormGroup;
+  stocksSearchCompanyCode: string = "";
+  allStocksData: Stocks[] = [];
+  displayedColumnsStocks: string[] = ['companyCode', 'stockPrice', 'stockDateTime'];
+  isStockSearchClicked: boolean = false;
+
   constructor(public companyService: CompanyService, private _snackBar: MatSnackBar, public dialog: MatDialog,
-    public stocksService: StocksService) { }
+    public stocksService: StocksService) {
+    const today = new Date();
+    const month = today.getMonth();
+    const year = today.getFullYear();
+
+    this.stockDateRange = new FormGroup({
+      start: new FormControl(new Date(year, month, 10)),
+      end: new FormControl(new Date(year, month, 13)),
+    });
+
+  }
 
   ngOnInit(): void {
     this.getAllCompaniesList();
@@ -202,6 +219,23 @@ export class HomeComponent implements OnInit {
           });
         }
       });
+
+  }
+
+  searchCompanyStocks() {
+    console.log(this.stocksSearchCompanyCode);
+    console.log(this.stockDateRange.value.start);
+    console.log(this.stockDateRange.value.end);
+
+    if (null != this.stocksSearchCompanyCode && this.stocksSearchCompanyCode != "") {
+      this.stocksService.getStocks(this.stocksSearchCompanyCode, this.stockDateRange.value.start, this.stockDateRange.value.end)
+        .subscribe(data => {
+          console.log(data);
+          this.allStocksData = data;
+          this.isStockSearchClicked = true;
+        });
+    }
+
 
   }
 

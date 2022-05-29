@@ -15,6 +15,7 @@ import { CompanyService } from './services/company.service';
 import { StocksService } from './services/stocks.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule, HttpClientModule
+    FormsModule, HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [CommonService, CompanyService, StocksService],
   bootstrap: [AppComponent]

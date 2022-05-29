@@ -1,7 +1,7 @@
 <div class="mainContent" id="homeMainContId">
 
     <h1>
-        Companies
+        Companies & Stocks
     </h1>
 
     <div>
@@ -199,7 +199,66 @@
     </div>
 
     <div *ngIf="getAllStocksShowFlag">
-        Get All Stocks
+        <h2 class="companyListHeading">Get Stocks List</h2>
+
+        <div>
+            <mat-form-field appearance="fill" class="userNameDiv searchCompCodeField">
+                <mat-label>Company Code</mat-label>
+                <input matInput placeholder="Ex. C001" [(ngModel)]="stocksSearchCompanyCode"
+                    id="stocksSearchCompanyCode" name="stocksSearchCompanyCode">
+            </mat-form-field>
+
+
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Date Range</mat-label>
+                <mat-date-range-input [formGroup]="stockDateRange" [rangePicker]="stockDateRangePicker">
+                    <input matStartDate placeholder="Start date" formControlName="start">
+                    <input matEndDate placeholder="End date" formControlName="end">
+                </mat-date-range-input>
+                <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="stockDateRangePicker"></mat-datepicker-toggle>
+                <mat-date-range-picker #stockDateRangePicker></mat-date-range-picker>
+            </mat-form-field>
+
+
+            <button mat-raised-button color="primary" (click)="searchCompanyStocks()"
+                class="searchCompanyBtn">Search</button>
+        </div>
+
+        <div>
+            <div *ngIf="allStocksData.length==0 && isStockSearchClicked" class="stockSearchData">
+                No Stocks Data Available!
+            </div>
+
+            <div *ngIf="allStocksData.length>0" class="stockSearchData">
+                <table mat-table [dataSource]="allStocksData" #mytable class="my-table mat-elevation-z8">
+
+                    <!--- Note that these columns can be defined in any order.
+                        The actual rendered columns are set as a property on the row definition" -->
+
+                    <!-- companyCode Column -->
+                    <ng-container matColumnDef="companyCode">
+                        <th mat-header-cell *matHeaderCellDef> Company Code </th>
+                        <td mat-cell *matCellDef="let element"> {{element.companyCode}} </td>
+                    </ng-container>
+
+                    <!-- stockPrice Column -->
+                    <ng-container matColumnDef="stockPrice">
+                        <th mat-header-cell *matHeaderCellDef> Stock Price </th>
+                        <td mat-cell *matCellDef="let element"> {{element.stockPrice}} </td>
+                    </ng-container>
+
+                    <!-- stockDateTime Column -->
+                    <ng-container matColumnDef="stockDateTime">
+                        <th mat-header-cell *matHeaderCellDef> Stock Date/Time </th>
+                        <td mat-cell *matCellDef="let element"> {{element.stockDateTime}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumnsStocks"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumnsStocks;"></tr>
+                </table>
+            </div>
+        </div>
     </div>
 
 
