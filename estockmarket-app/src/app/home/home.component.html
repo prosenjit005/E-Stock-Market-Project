@@ -251,7 +251,7 @@
                     <!-- stockDateTime Column -->
                     <ng-container matColumnDef="stockDateTime">
                         <th mat-header-cell *matHeaderCellDef> Stock Date/Time </th>
-                        <td mat-cell *matCellDef="let element"> {{element.stockDateTime}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.stockDateTime | date:'M/d/yy, h:mm a'}} </td>
                     </ng-container>
 
                     <tr mat-header-row *matHeaderRowDef="displayedColumnsStocks"></tr>

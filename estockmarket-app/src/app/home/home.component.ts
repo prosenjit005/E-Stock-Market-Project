@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Company, CompanyService } from '../services/company.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorSnackBarComponent } from '../errorSnackBars/error-snack-bar/error-snack-bar.component';
@@ -7,6 +7,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
 import { Stocks, StocksService } from '../services/stocks.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import {LiveAnnouncer} from '@angular/cdk/a11y';
+import {MatSort, Sort} from '@angular/material/sort';
 
 @Component({
   selector: 'app-home',
@@ -45,7 +47,7 @@ export class HomeComponent implements OnInit {
   isStockSearchClicked: boolean = false;
 
   constructor(public companyService: CompanyService, private _snackBar: MatSnackBar, public dialog: MatDialog,
-    public stocksService: StocksService) {
+    public stocksService: StocksService, private _liveAnnouncer: LiveAnnouncer) {
     const today = new Date();
     const month = today.getMonth();
     const year = today.getFullYear();
@@ -238,6 +240,7 @@ export class HomeComponent implements OnInit {
 
 
   }
+
 
 
 
