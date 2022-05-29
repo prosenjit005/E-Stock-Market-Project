@@ -1373,3 +1373,12 @@ Caused by: java.net.SocketTimeoutException: Read timed out
 2022-05-29 16:19:47.272  INFO 21248 --- [http-nio-auto-1-exec-7] c.e.stock.service.StocksServicesImpl     : getStocksList: stocksList=[Stocks(id=90, companyCode=C002, stockPrice=89.36, stockDateTime=Sun May 29 15:29:02 IST 2022), Stocks(id=91, companyCode=C002, stockPrice=78.3, stockDateTime=Sun May 29 15:29:41 IST 2022)]
 2022-05-29 16:19:47.272  INFO 21248 --- [http-nio-auto-1-exec-7] c.e.s.controller.StocksApiController     : getStocks: stocksList=[Stocks(id=90, companyCode=C002, stockPrice=89.36, stockDateTime=Sun May 29 15:29:02 IST 2022), Stocks(id=91, companyCode=C002, stockPrice=78.3, stockDateTime=Sun May 29 15:29:41 IST 2022)]
 2022-05-29 16:20:09.680  INFO 21248 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-29 16:25:09.685  INFO 21248 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-29 16:30:09.686  INFO 21248 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-29 16:35:09.689  INFO 21248 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-29 16:40:09.691  INFO 21248 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-29 16:45:09.700  INFO 21248 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-29 16:50:09.706  INFO 21248 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-29 16:55:09.716  INFO 21248 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-29 17:00:09.723  INFO 21248 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-29 17:05:09.730  INFO 21248 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

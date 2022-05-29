@@ -7,8 +7,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
 import { Stocks, StocksService } from '../services/stocks.service';
 import { FormControl, FormGroup } from '@angular/forms';
-import {LiveAnnouncer} from '@angular/cdk/a11y';
-import {MatSort, Sort} from '@angular/material/sort';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { MatSort, Sort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-home',
@@ -131,54 +131,64 @@ export class HomeComponent implements OnInit {
   }
 
   saveCompany() {
-    this.companyService.getAllCompanies()
-      .subscribe(data => {
-        this.allCompaniesData = data
+    if (this.validateCompanyData()) {
+      this.companyService.getAllCompanies()
+        .subscribe(data => {
+          this.allCompaniesData = data
 
-        let companyData = {} as Company;
-        companyData.companyCode = this.companyCode;
-        companyData.companyName = this.companyName;
-        companyData.companyCEO = this.companyCEO;
-        companyData.companyTurnover = this.companyTurnover;
-        companyData.companyWebsite = this.companyWebsite;
-        companyData.stockExchange = this.stockExchange;
+          let companyData = {} as Company;
+          companyData.companyCode = this.companyCode;
+          companyData.companyName = this.companyName;
+          companyData.companyCEO = this.companyCEO;
+          companyData.companyTurnover = this.companyTurnover;
+          companyData.companyWebsite = this.companyWebsite;
+          companyData.stockExchange = this.stockExchange;
 
-        console.log(companyData);
+          console.log(companyData);
 
-        //this will filter if the companyCode is already present.
-        let companyPresentObj = this.allCompaniesData.find(obj => obj.companyCode.toLocaleLowerCase() ==
-          companyData.companyCode.toLocaleLowerCase());
-        console.log("Company Present=", companyPresentObj);
+          //this will filter if the companyCode is already present.
+          let companyPresentObj = this.allCompaniesData.find(obj => obj.companyCode.toLocaleLowerCase() ==
+            companyData.companyCode.toLocaleLowerCase());
+          console.log("Company Present=", companyPresentObj);
 
-        if (null != companyPresentObj) {
-          this._snackBar.openFromComponent(ErrorSnackBarComponent, {
-            duration: 5 * 1000,
-            panelClass: ['custom-error-snackbar-style'],
-            horizontalPosition: 'center',
-            verticalPosition: 'top'
-          });
-
-
-        } else {
-          //company code is unique
-          this.companyService.saveCompanyDetails(companyData)
-            .subscribe(data => {
-              console.log(data);
-              this._snackBar.openFromComponent(SuccessSnackBarComponent, {
-                duration: 5 * 1000,
-                panelClass: ['custom-success-snackbar-style'],
-                horizontalPosition: 'center',
-                verticalPosition: 'top'
-              });
+          if (null != companyPresentObj) {
+            this._snackBar.openFromComponent(ErrorSnackBarComponent, {
+              duration: 5 * 1000,
+              panelClass: ['custom-error-snackbar-style'],
+              horizontalPosition: 'center',
+              verticalPosition: 'top'
             });
-        }
 
 
+          } else {
+            //company code is unique
+            this.companyService.saveCompanyDetails(companyData)
+              .subscribe(data => {
+                console.log(data);
+                this._snackBar.openFromComponent(SuccessSnackBarComponent, {
+                  duration: 5 * 1000,
+                  panelClass: ['custom-success-snackbar-style'],
+                  horizontalPosition: 'center',
+                  verticalPosition: 'top'
+                });
+              });
+          }
 
 
-      });
+        });
+    }
 
+  }
 
+  validateCompanyData(): boolean {
+    let validFlag = false;
+
+    if (this.companyCode != null && this.companyName != null && this.companyCEO != null && this.companyTurnover != null
+      && this.companyWebsite != null && this.stockExchange != null) {
+      validFlag = true;
+    }
+
+    return validFlag;
   }
 
   openTableDialog(action: string, element: Company) {

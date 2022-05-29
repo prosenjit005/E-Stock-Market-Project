@@ -20,26 +20,26 @@
     <div *ngIf="addCompanyShowFlag">
         <h2 class="companyListHeading">Add Company</h2>
 
-        <form class="example-form">
+        <form class="example-form" #addCompanyForm name="addCompanyForm">
             <div>
                 <mat-form-field appearance="fill" class="userNameDiv">
                     <mat-label>Company Code</mat-label>
-                    <input matInput placeholder="Ex. C001" [(ngModel)]="companyCode" id="companyCode"
-                        name="companyCode">
+                    <input matInput placeholder="Ex. C001" [(ngModel)]="companyCode" id="companyCode" name="companyCode"
+                        required>
                 </mat-form-field>
             </div>
 
             <div>
                 <mat-form-field appearance="fill" class="userNameDiv">
                     <mat-label>Company Name</mat-label>
-                    <input matInput [(ngModel)]="companyName" id="companyName" name="companyName">
+                    <input matInput [(ngModel)]="companyName" id="companyName" name="companyName" required>
                 </mat-form-field>
             </div>
 
             <div>
                 <mat-form-field appearance="fill" class="userNameDiv">
                     <mat-label>Company CEO</mat-label>
-                    <input matInput [(ngModel)]="companyCEO" id="companyCEO" name="companyCEO">
+                    <input matInput [(ngModel)]="companyCEO" id="companyCEO" name="companyCEO" required>
                 </mat-form-field>
             </div>
 
@@ -47,21 +47,21 @@
                 <mat-form-field appearance="fill" class="userNameDiv">
                     <mat-label>Company Turnover</mat-label>
                     <input matInput [(ngModel)]="companyTurnover" id="companyTurnover" name="companyTurnover"
-                        type="number">
+                        type="number" required>
                 </mat-form-field>
             </div>
 
             <div>
                 <mat-form-field appearance="fill" class="userNameDiv">
                     <mat-label>Company Website</mat-label>
-                    <input matInput [(ngModel)]="companyWebsite" id="companyWebsite" name="companyWebsite">
+                    <input matInput [(ngModel)]="companyWebsite" id="companyWebsite" name="companyWebsite" required>
                 </mat-form-field>
             </div>
 
             <div>
                 <mat-form-field appearance="fill" class="userNameDiv">
                     <mat-label>Stock Exchange</mat-label>
-                    <input matInput [(ngModel)]="stockExchange" id="stockExchange" name="stockExchange">
+                    <input matInput [(ngModel)]="stockExchange" id="stockExchange" name="stockExchange" required>
                 </mat-form-field>
             </div>
 
