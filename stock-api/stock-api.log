@@ -865,3 +865,9 @@ Caused by: java.net.SocketTimeoutException: Read timed out
 2022-05-29 11:43:52.089  INFO 32452 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2022-05-29 11:45:05.181  INFO 32452 --- [http-nio-auto-1-exec-1] c.e.s.controller.StocksApiController     : deleteCompanyStocks: input companycode=C002
 2022-05-29 11:46:58.165  INFO 32452 --- [http-nio-auto-1-exec-3] c.e.s.controller.StocksApiController     : deleteCompanyStocks: input companycode=C003
+2022-05-29 11:48:52.099  INFO 32452 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-29 11:53:52.102  INFO 32452 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-29 11:58:52.103  INFO 32452 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-29 12:03:33.114  INFO 32452 --- [http-nio-auto-1-exec-5] c.e.s.controller.StocksApiController     : deleteCompanyStocks: input companycode=C002
+2022-05-29 12:03:52.120  INFO 32452 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-29 12:04:38.017  INFO 32452 --- [http-nio-auto-1-exec-7] c.e.s.controller.StocksApiController     : deleteCompanyStocks: input companycode=C003

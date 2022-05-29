@@ -3,7 +3,7 @@ import { Company, CompanyService } from '../services/company.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorSnackBarComponent } from '../errorSnackBars/error-snack-bar/error-snack-bar.component';
 import { SuccessSnackBarComponent } from '../errorSnackBars/success-snack-bar/success-snack-bar.component';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
 
 @Component({
@@ -147,10 +147,14 @@ export class HomeComponent implements OnInit {
   openTableDialog(action: string, element: Company) {
     console.log(element);
 
-    this.dialog.open(DeleteDialogComponent, {
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
       data: element,
     });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("The dialog was closed from home-component");
+      this.getAllCompaniesList();
+    });
   }
 
 }

@@ -18,7 +18,7 @@ export class DeleteDialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      console.log('The dialog was closed from delete-dialog-component');
     });
   }
 
