@@ -13,6 +13,8 @@
                 Companies</button></span>
         <span class="companyBtns"><button mat-raised-button color="primary" (click)="addStocksAction()">Add
                 Stocks</button></span>
+        <span class="companyBtns"><button mat-raised-button color="primary" (click)="getAllStocksAction()">Get Stocks
+                List</button></span>
     </div>
 
     <div *ngIf="addCompanyShowFlag">
@@ -108,9 +110,6 @@
             No Companies Data Available!
         </div>
 
-
-        <!-- experiment starts ***************** -->
-
         <table mat-table [dataSource]="allCompaniesData" #mytable class="my-table mat-elevation-z8">
 
             <!--- Note that these columns can be defined in any order.
@@ -169,13 +168,38 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
 
-        <!-- experiment ends ******************* -->
-
 
     </div>
 
     <div *ngIf="addStocksShowFlag">
-        Add Stocks
+        <h2 class="companyListHeading">Add Stocks</h2>
+
+        <form class="example-form">
+            <div>
+                <mat-form-field appearance="fill" class="userNameDiv">
+                    <mat-label>Company Code</mat-label>
+                    <input matInput placeholder="Ex. C001" [(ngModel)]="stocksCompanyCode" id="stocksCompanyCode"
+                        name="stocksCompanyCode">
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field appearance="fill" class="userNameDiv">
+                    <mat-label>Stock Price</mat-label>
+                    <input matInput [(ngModel)]="stcoksCompanyTurnover" id="stcoksCompanyTurnover"
+                        name="stcoksCompanyTurnover" type="number">
+                </mat-form-field>
+            </div>
+
+            <div class="example-button-row">
+                <button mat-raised-button color="primary" (click)="saveStockPrice()">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+    <div *ngIf="getAllStocksShowFlag">
+        Get All Stocks
     </div>
 
 

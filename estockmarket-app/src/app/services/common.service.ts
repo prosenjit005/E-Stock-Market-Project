@@ -9,6 +9,7 @@ export class CommonService {
   password: string = "password1";
 
   httpBaseCompanyUri: string = "http://localhost:8989/api/v1.0/market/company";
+  httpBaseStocksUri: string = "http://localhost:8989/api/v1.0/market/stock";
 
 
   constructor() { }

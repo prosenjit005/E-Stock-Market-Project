@@ -5,6 +5,7 @@ import { ErrorSnackBarComponent } from '../errorSnackBars/error-snack-bar/error-
 import { SuccessSnackBarComponent } from '../errorSnackBars/success-snack-bar/success-snack-bar.component';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
+import { Stocks, StocksService } from '../services/stocks.service';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
   getCompanyShowFlag = false;
   getAllCompaniesShowFlag = false;
   addStocksShowFlag = false;
+  getAllStocksShowFlag = false;
 
   allCompaniesData: Company[] = [];
   displayedColumns: string[] = ['companyCode', 'companyName', 'companyCEO', 'companyTurnover', 'companyWebsite', 'stockExchange', 'action'];
@@ -32,7 +34,11 @@ export class HomeComponent implements OnInit {
   searchCompanyData!: Company;
   isSearchBtnClicked: boolean = false;//to know whether the search button was clicked or not
 
-  constructor(public companyService: CompanyService, private _snackBar: MatSnackBar, public dialog: MatDialog) { }
+  stocksCompanyCode: string = "";
+  stcoksCompanyTurnover!: number;
+
+  constructor(public companyService: CompanyService, private _snackBar: MatSnackBar, public dialog: MatDialog,
+    public stocksService: StocksService) { }
 
   ngOnInit(): void {
     this.getAllCompaniesList();
@@ -50,6 +56,7 @@ export class HomeComponent implements OnInit {
     this.getCompanyShowFlag = false;
     this.getAllCompaniesShowFlag = false;
     this.addStocksShowFlag = false;
+    this.getAllStocksShowFlag = false;
 
   }
 
@@ -58,6 +65,7 @@ export class HomeComponent implements OnInit {
     this.getCompanyShowFlag = true;
     this.getAllCompaniesShowFlag = false;
     this.addStocksShowFlag = false;
+    this.getAllStocksShowFlag = false;
   }
 
   searchCompany() {
@@ -84,6 +92,7 @@ export class HomeComponent implements OnInit {
     this.getCompanyShowFlag = false;
     this.getAllCompaniesShowFlag = true;
     this.addStocksShowFlag = false;
+    this.getAllStocksShowFlag = false;
   }
 
   addStocksAction() {
@@ -91,6 +100,15 @@ export class HomeComponent implements OnInit {
     this.getCompanyShowFlag = false;
     this.getAllCompaniesShowFlag = false;
     this.addStocksShowFlag = true;
+    this.getAllStocksShowFlag = false;
+  }
+
+  getAllStocksAction() {
+    this.addCompanyShowFlag = false;
+    this.getCompanyShowFlag = false;
+    this.getAllCompaniesShowFlag = false;
+    this.addStocksShowFlag = false;
+    this.getAllStocksShowFlag = true;
   }
 
   saveCompany() {
@@ -156,5 +174,37 @@ export class HomeComponent implements OnInit {
       this.getAllCompaniesList();
     });
   }
+
+  saveStockPrice() {
+    let stockData = {} as Stocks;
+    stockData.companyCode = this.stocksCompanyCode;
+    stockData.stockPrice = this.stcoksCompanyTurnover;
+
+    console.log(stockData);
+
+    this.stocksService.addNewStock(stockData)
+      .subscribe(data => {
+        console.log(data);
+
+        if (data == null) {
+          this._snackBar.openFromComponent(ErrorSnackBarComponent, {
+            duration: 5 * 1000,
+            panelClass: ['custom-error-snackbar-style'],
+            horizontalPosition: 'center',
+            verticalPosition: 'top'
+          });
+        } else {
+          this._snackBar.openFromComponent(SuccessSnackBarComponent, {
+            duration: 5 * 1000,
+            panelClass: ['custom-success-snackbar-style'],
+            horizontalPosition: 'center',
+            verticalPosition: 'top'
+          });
+        }
+      });
+
+  }
+
+
 
 }

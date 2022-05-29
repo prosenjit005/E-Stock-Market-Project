@@ -51,7 +51,7 @@ public class StocksApiController {
 	}
 
 	@PostMapping("/add/{companycode}")
-	public String addNewStock(@RequestBody Stocks stocks, @PathVariable String companycode) {
+	public Stocks addNewStock(@RequestBody Stocks stocks, @PathVariable String companycode) {
 		logger.info("addNewStock: stocks={} \n companycode={}", stocks, companycode);
 		if (Boolean.TRUE.equals(stocksServices.validateStocksDetails(stocks, companycode))) {
 			logger.info("addNewStock: stocks validation is successful");
@@ -65,10 +65,10 @@ public class StocksApiController {
 				stocksServices.sendToKafka(stocks, crudC);
 			}
 
-			return "Stocks Data added successfully with ID=" + stocks.getId();
+			return stocks;
 		} else {
 			logger.info("addNewStock: stocks validation failed");
-			return "There is an issue. Please retry with valid data.";
+			return null;
 		}
 
 	}
