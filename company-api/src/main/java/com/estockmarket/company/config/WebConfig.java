@@ -12,7 +12,7 @@ public class WebConfig implements WebMvcConfigurer {
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
 		registry.addMapping("/stockapi/**").allowedOrigins("http://stockapi")
-				.allowedMethods("GET", "POST")
+				.allowedMethods("GET", "POST", "DELETE")
 				.allowedHeaders("header1", "header2")
 				.exposedHeaders("header1", "header2")
 				.allowCredentials(false)

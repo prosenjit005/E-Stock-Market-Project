@@ -9,3 +9,6 @@
     <button mat-button (click)="onDeleteClick()">Delete</button>
     <button mat-raised-button color="primary" [mat-dialog-close]="data.companyCode" cdkFocusInitial>No</button>
 </div>
+<div mat-dialog-actions *ngIf="isDeleteSuccess">
+    <button mat-raised-button color="primary" [mat-dialog-close]="data.companyCode" cdkFocusInitial>OK</button>
+</div>

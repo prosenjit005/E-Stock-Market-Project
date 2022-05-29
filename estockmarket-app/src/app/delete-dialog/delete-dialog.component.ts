@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { Company } from '../services/company.service';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Company, CompanyService } from '../services/company.service';
 
 @Component({
   selector: 'app-delete-dialog',
@@ -9,10 +9,12 @@ import { Company } from '../services/company.service';
 })
 export class DeleteDialogComponent implements OnInit {
 
-  isDeleteSuccess:boolean = false;
+  isDeleteSuccess: boolean = false;
+  allCompaniesData: Company[] = [];
 
   constructor(public dialogRef: MatDialogRef<DeleteDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Company) { }
+    @Inject(MAT_DIALOG_DATA) public data: Company,
+    public companyService: CompanyService) { }
 
   ngOnInit(): void {
     this.dialogRef.afterClosed().subscribe(result => {
@@ -23,9 +25,18 @@ export class DeleteDialogComponent implements OnInit {
   onDeleteClick(): void {
     console.log(this.data);
 
-
-    this.isDeleteSuccess = true;
-    
+    this.companyService.deleteCompany(this.data.companyCode)
+      .subscribe(data => {
+        console.log(data);
+        this.isDeleteSuccess = true;
+      });
   }
-  
+
+  getAllCompaniesList() {
+    this.companyService.getAllCompanies()
+      .subscribe(data => {
+        this.allCompaniesData = data
+      });
+  }
+
 }

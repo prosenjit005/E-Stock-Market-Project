@@ -22,6 +22,7 @@ export class CompanyService {
   getAllCompaniesUrl = '/getall';
   saveCompanyUrl = '/register';
   getCompanyInfoUrl = '/info';
+  deleteCompanyUrl = '/delete';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -42,6 +43,10 @@ export class CompanyService {
 
   getCompanyInfo(companyCode: string): Observable<Company> {
     return this.http.get<Company>(this.commonService.httpBaseCompanyUri + this.getCompanyInfoUrl + "/" + companyCode, this.httpOptions)
+  }
+
+  deleteCompany(companyCode: string): Observable<Company> {
+    return this.http.delete<Company>(this.commonService.httpBaseCompanyUri + this.deleteCompanyUrl + "/" + companyCode, this.httpOptions)
   }
 
 

@@ -856,3 +856,12 @@ Caused by: java.net.SocketTimeoutException: Read timed out
 2022-05-29 11:13:52.026  INFO 32452 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2022-05-29 11:18:52.042  INFO 32452 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2022-05-29 11:23:52.056  INFO 32452 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-29 11:28:48.616  INFO 32452 --- [RMI TCP Connection(97)-127.0.0.1] o.a.c.c.C.[.[.[/api/v1.0/market]         : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-29 11:28:48.616  INFO 32452 --- [RMI TCP Connection(97)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-29 11:28:48.620  INFO 32452 --- [RMI TCP Connection(97)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-05-29 11:28:52.067  INFO 32452 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-29 11:33:52.071  INFO 32452 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-29 11:38:52.082  INFO 32452 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-29 11:43:52.089  INFO 32452 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-05-29 11:45:05.181  INFO 32452 --- [http-nio-auto-1-exec-1] c.e.s.controller.StocksApiController     : deleteCompanyStocks: input companycode=C002
+2022-05-29 11:46:58.165  INFO 32452 --- [http-nio-auto-1-exec-3] c.e.s.controller.StocksApiController     : deleteCompanyStocks: input companycode=C003
