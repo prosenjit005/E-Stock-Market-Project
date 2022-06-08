@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.estockmarket.company.config.FeignClientConfiguration;
 
-@FeignClient(value = "stock-api", url = "http://localhost:8989/api/v1.0/market/stock/", configuration = FeignClientConfiguration.class)
+@FeignClient(value = "stock-api", url = "http://52.33.255.113:8989/api/v1.0/market/stock/", configuration = FeignClientConfiguration.class)
 public interface StocksApiRestClient {
 
 	@GetMapping("/test")
